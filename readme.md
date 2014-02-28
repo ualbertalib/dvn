@@ -11,3 +11,4 @@ Fork from <https://github.com/IQSS/dvn> on 2014.02.23
 * Clone project, Window -> Open Perspective -> Git -> Copy and paste <https://github.com/ualbertalib/dvn.git> to Git Repositories tab 
 * Import project, File -> Import -> Existing Maven Project
 * You should get projects DVN-root and DVN-web in your workspace.
+* Build project, DVN-root -> Run As -> 1. Maven build -> Goles: package -> Run
