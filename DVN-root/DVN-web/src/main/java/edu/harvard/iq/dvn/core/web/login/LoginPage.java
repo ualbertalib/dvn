@@ -55,6 +55,12 @@ import edu.harvard.iq.dvn.core.web.common.VDCBaseBean;
  * </p>
  */
 
+/**
+ * The LoginPage class.
+ * 
+ * @author <a href="mailto:piyapong.charoenwattana@gmail.com">Piyapong Charoenwattana</a>
+ * @version $Revision$ $Date$
+ */
 @Named("LoginPage")
 @ViewScoped
 public class LoginPage extends VDCBaseBean implements java.io.Serializable {
@@ -73,6 +79,7 @@ public class LoginPage extends VDCBaseBean implements java.io.Serializable {
 	@EJB
 	VDCNetworkServiceLocal vdcNetworkService;
 
+	private static final String defaultPosition = "Other";
 	private Boolean clearWorkflow;
 	String refererUrl = new String("");
 	String errMessage;
@@ -117,31 +124,61 @@ public class LoginPage extends VDCBaseBean implements java.io.Serializable {
 	public LoginPage() {
 	}
 
+	/**
+	 * The login method has been modified for ccid authentication. It will automatically create an account using
+	 * information from ldap server. The user information will be updated every time when user logging in. The
+	 * networkAdmin account still be able to login using password authentication.
+	 * 
+	 * @author pcharoen
+	 * @return null if it failed, workflow id if it successful
+	 */
 	public String login() {
-		if (ldapAuthService.authenticate(userName.trim(), password)) {
-			boolean activeOnly = true;
-			VDCUser user = userService.findByUserName("pcharoen" /* userName.trim() */, activeOnly);
-			if (user == null) {
-				try {
-					Attributes attrs = ldapAuthService.getAttributes(userName.trim());
-					// editUserService.newUser();
-					// user = editUserService.getUser();
-					// user.setActive(true);
-					// user.setUserName((String) attrs.get("uid").get());
-					// user.setFirstName((String) attrs.get("givenName").get());
-					// user.setLastName((String) attrs.get("sn").get());
-					// user.setEmail((String) attrs.get("mail").get());
-					// editUserService.save();
-				} catch (Exception e) {
-					loginFailed = true;
-					errMessage = "Login failed. Could not create user account.";
-					return null;
-				}
-			}
+		boolean activeOnly = true;
+		VDCUser user = userService.findByUserName(userName.trim(), activeOnly);
+
+		// authenticate networkAdmin
+		if (user != null && user.getId() == 1 && userService.validatePassword(user.getId(), password)) {
 			String forward = null;
-			LoginWorkflowBean loginWorkflowBean = (LoginWorkflowBean) this.getBean("LoginWorkflowBean");
+			LoginWorkflowBean loginWorkflowBean = (LoginWorkflowBean) VDCBaseBean.getBean("LoginWorkflowBean");
 			forward = loginWorkflowBean.processLogin(user, studyId);
 			return forward;
+
+			// ccid authentication
+		} else if (ldapAuthService.authenticate(userName.trim(), password)) {
+			try {
+				user = userService.findByUserName(userName.trim());
+				Attributes attrs = ldapAuthService.getAttributes(userName.trim());
+				if (user == null) {
+
+					// add new user
+					editUserService.newUser();
+					user = editUserService.getUser();
+					user.setUserName((String) attrs.get("uid").get());
+					user.setActive(true);
+					user.setPosition(defaultPosition);
+
+				} else if (!user.isActive()) {
+					loginFailed = true;
+					errMessage = "Login failed. Your account is inactive.";
+					return null;
+				}
+
+				// update user info
+				user.setFirstName((String) attrs.get("givenName").get());
+				user.setLastName((String) attrs.get("sn").get());
+				user.setEmail((String) attrs.get("mail").get());
+				editUserService.save();
+
+				// forward to workflow
+				String forward = null;
+				LoginWorkflowBean loginWorkflowBean = (LoginWorkflowBean) VDCBaseBean.getBean("LoginWorkflowBean");
+				forward = loginWorkflowBean.processLogin(user, studyId);
+				return forward;
+			} catch (Exception e) {
+				loginFailed = true;
+				errMessage = "Login failed. Could not create Dataverse account.";
+				return null;
+			}
 		} else {
 			loginFailed = true;
 			errMessage = "Login failed. Please check your username and password and try again.";
