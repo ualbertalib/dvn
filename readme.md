@@ -4,7 +4,7 @@
 + To learn more, please visit <http://thedata.org> 
 + Development takes place on the "develop" branch: <https://github.com/IQSS/dvn/tree/develop> 
 
-Fork from <https://github.com/IQSS/dvn> on 2014.02.23
+Fork from <https://github.com/IQSS/dvn> on 2014.02.23 for Digital Initiative Dataverse Network, University of Alberta Libraries
 
 ## Quick Start Guide for Eclipse
 * Download Eclipse Kepler (4.3.1) for Java EE Developers <http://eclipse.org/downloads/>
