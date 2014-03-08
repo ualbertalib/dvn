@@ -16,7 +16,7 @@
    Dataverse Network - A web application to share, preserve and analyze research data.
    Developed at the Institute for Quantitative Social Science, Harvard University.
    Version 3.0.
-*/
+ */
 /*
  * VersionPage.java
  * 
@@ -27,45 +27,50 @@
  */
 package edu.harvard.iq.dvn.core.web;
 
-import edu.harvard.iq.dvn.core.web.common.VDCBaseBean;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ResourceBundle;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Named;
 
+import edu.harvard.iq.dvn.core.web.common.VDCBaseBean;
+
 /**
- *
+ * 
  * @author roberttreacy
  */
 @Named("VersionPage")
 @ApplicationScoped
-public class VersionPage extends VDCBaseBean  implements java.io.Serializable {
-   
-    private String versionNumber;
-    public String getVersionNumber() {
-        if (versionNumber == null) {
-            versionNumber = ResourceBundle.getBundle("VersionNumber").getString("version.number");
-        }
-        return versionNumber;
+public class VersionPage extends VDCBaseBean implements java.io.Serializable {
 
-    }
-    public void setVersionNumber(String versionNumber) {
-        this.versionNumber = versionNumber;
-    }
-    public String getBambooBuild() {
-        String buildString = null;
-        String buildStr = ResourceBundle.getBundle("BuildNumber").getString("build.number");
-        return buildStr != null? buildStr : "00";
-    }
+	private String versionNumber;
 
-    public String getServerName() {
-        try {
-            return InetAddress.getLocalHost().getCanonicalHostName();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+	public String getVersionNumber() {
+		if (versionNumber == null) {
+			versionNumber = ResourceBundle.getBundle("VersionNumber").getString("version.number");
+		}
+		return versionNumber;
+
+	}
+
+	public void setVersionNumber(String versionNumber) {
+		this.versionNumber = versionNumber;
+	}
+
+	public String getBambooBuild() {
+		String buildString = null;
+		String buildStr = ResourceBundle.getBundle("BuildNumber").getString("buildNumber");
+		return buildStr != null ? buildStr : "00";
+	}
+
+	public String getServerName() {
+		try {
+			return InetAddress.getLocalHost().getCanonicalHostName();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 
 }
