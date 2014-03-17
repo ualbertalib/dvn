@@ -615,7 +615,6 @@
 				</executions>
 				<configuration>
 					<buildNumberPropertiesFileLocation>${basedir}/src/main/java/BuildNumber.properties</buildNumberPropertiesFileLocation>
-					<buildNumberPropertyName>build.number</buildNumberPropertyName>
 					<format>{0,number}</format>
 					<items>
 						<item>buildNumber</item>

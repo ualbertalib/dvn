@@ -34,7 +34,7 @@
                                         <div jsfc="h:panelGroup" styleClass="dvnLoginFailed" rendered="#{LoginPage.loginFailed}">
                                             <ice:outputText styleClass="errorMessage" value="#{LoginPage.errMessage}"/>
                                         </div>
-                                        <label for="username">Username</label>
+                                        <label for="username">CCID</label>
                                         <ice:inputText tabindex="1" id="username" value="#{LoginPage.userName}" required="true" requiredMessage="This field is required." action="#{LoginPage.login}"/>
                                         <ice:message for="username" styleClass="errorMessage"/>
                                         <br/>
@@ -44,9 +44,11 @@
                                         <div class="dvnFormPadding dvnFormMargin">
                                             <ice:commandButton tabindex="3" id="button1" value="Log in" action="#{LoginPage.login}"/>
                                         </div>
+                                        <ui:remove>
                                         <div class="dvnLoginLinkBlock">
                                             <p><ice:outputLink tabindex="4" value="/dvn/faces/login/ForgotPasswordPage.xhtml" title="Link to Reset Password">Forgot your password?</ice:outputLink></p>
                                         </div>
+                                        </ui:remove>
                                     </fieldset>
                                     <!-- ************* end username login section *************** -->
                                     <!-- ************ Affiliate login section ******************* -->
@@ -85,7 +87,9 @@
                                             <ice:outputText value="#{bundlePageInfo.loginHelp}" escape="false" rendered="#{LoginPage.redirect == null}"/>
                                             <ice:outputText value="#{bundlePageInfo.loginAffiliateHelp}" escape="false" rendered="#{LoginPage.isAffiliates != null}"/>
                                             <ice:outputText value="#{bundlePageInfo.loginRestrictedHelp}" escape="false" rendered="#{LoginPage.redirect != null}"/>
+                                            <ui:remove>
                                             <p><ice:outputText value="Don't have a Dataverse Network account? "></ice:outputText> <ice:commandLink tabindex="5" action="#{LoginWorkflowBean.beginContributorWorkflow}" title="Create an Account" immediate="true">Create an Account.</ice:commandLink></p>
+                                            </ui:remove>  
                                         </div>
                                     </div>
                                     <div class="dvnLoginContentAreaFooter">

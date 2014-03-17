@@ -4,6 +4,7 @@
  */
 package edu.harvard.iq.dvn.core.admin;
 
+import java.text.MessageFormat;
 import java.util.Hashtable;
 
 import javax.ejb.Stateless;
@@ -24,9 +25,11 @@ import javax.naming.directory.SearchResult;
  */
 @Stateless
 public class LdapAuthServiceBean implements LdapAuthServiceLocal {
-	private final String providerUrl = "ldaps://directory.srv.ualberta.ca:636";
-	private final String authentication = "simple";
-	private final String principles = "ou=people,dc=ualberta,dc=ca";
+
+	private static final long serialVersionUID = 832857325410696207L;
+	private static final String providerUrl = System.getProperty("dvn.ldap.provider.url");
+	private static final String userPattern = System.getProperty("dvn.ldap.user.pattern");
+	private static final String userBase = System.getProperty("dvn.ldap.user.base");
 
 	public LdapAuthServiceBean() {
 	}
@@ -35,7 +38,7 @@ public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 	public boolean authenticate(String uid, String pwd) {
 		try {
 			Hashtable<String, String> env = getEnv();
-			env.put(Context.SECURITY_PRINCIPAL, "uid=" + uid + ", " + principles);
+			env.put(Context.SECURITY_PRINCIPAL, MessageFormat.format(userPattern, uid));
 			env.put(Context.SECURITY_CREDENTIALS, pwd);
 			DirContext ctx = new InitialDirContext(env);
 			ctx.close();
@@ -61,7 +64,7 @@ public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 		env.put("com.sun.jndi.ldap.connect.pool", "true");
 		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
 		env.put(Context.PROVIDER_URL, providerUrl);
-		env.put(Context.SECURITY_AUTHENTICATION, authentication);
+		env.put(Context.SECURITY_AUTHENTICATION, "simple");
 		return env;
 	}
 
@@ -70,7 +73,7 @@ public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 			DirContext ctx = new InitialDirContext(env);
 			Attributes matchAttrs = new BasicAttributes(true); // ignore case
 			matchAttrs.put(new BasicAttribute("uid", uid));
-			NamingEnumeration<SearchResult> results = ctx.search(principles, matchAttrs);
+			NamingEnumeration<SearchResult> results = ctx.search(userBase, matchAttrs);
 			ctx.close();
 			return results.hasMore() ? results.next() : null;
 		} catch (Exception e) {

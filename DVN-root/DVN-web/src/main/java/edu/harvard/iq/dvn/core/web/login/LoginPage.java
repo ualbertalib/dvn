@@ -181,7 +181,7 @@ public class LoginPage extends VDCBaseBean implements java.io.Serializable {
 			}
 		} else {
 			loginFailed = true;
-			errMessage = "Login failed. Please check your username and password and try again.";
+			errMessage = "Login failed. Please check your CCID and password and try again.";
 			return null;
 		}
 	}

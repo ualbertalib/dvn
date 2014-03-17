@@ -120,11 +120,13 @@
                                 
                                 <div class="dvnHmpgColumnHeaderBlock">
                                     <h1 class="dvnHmpgColumnHeader">Dataverses</h1>
+                                   	<ui:remove>
                                     <div jsfc="ice:panelGroup" id="createDataverse" styleClass="dvnCreateActionBox dvnCreateDataverse" rendered="#{VDCRequest.vdcNetwork.allowCreateRequest and !VDCRequest.readOnlyDatabase}">
                                         <ice:outputLink value="/dvn#{VDCRequest.currentVdcNetworkURL}/faces/login/CreatorRequestInfoPage.xhtml">
                                             <ice:outputText value="Create Dataverse"/>
                                         </ice:outputLink>
                                     </div>
+                                   	</ui:remove>
                                     <div class="dvnHmpgColumnTotals">
                                         <ice:outputText styleClass="dvn_totalsValue" value="#{homePage.vdcUIListSize}"/>
                                         <ice:outputText value=" Dataverses"/>
