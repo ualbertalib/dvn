@@ -35,16 +35,16 @@
                                             <ice:outputText styleClass="errorMessage" value="#{LoginPage.errMessage}"/>
                                         </div>
 										<div style="padding-right: 15px;">
-                                        <div style="text-align: right;">
-                                        <label for="username">CCID</label>
-                                        <ice:inputText tabindex="1" id="username" value="#{LoginPage.userName}" required="true" requiredMessage="This field is required." action="#{LoginPage.login}"/>
-                                        <ice:message for="username" styleClass="errorMessage"/>
-                                        </div>
-                                        <div style="text-align: right; margin-top: 0;">
-                                        <label for="password">Password</label>
-                                        <ice:inputSecret tabindex="2" id="password" value="#{LoginPage.password}" required="true" requiredMessage="This field is required." action="#{LoginPage.login}"/>
-                                        <ice:message for="password" styleClass="errorMessage"/>
-                                        </div>
+	                                        <div style="text-align: right;">
+		                                        <label for="username">CCID</label>
+		                                        <ice:inputText tabindex="1" id="username" value="#{LoginPage.userName}" required="true" requiredMessage="This field is required." action="#{LoginPage.login}"/>
+		                                        <ice:message for="username" styleClass="errorMessage"/>
+	                                        </div>
+	                                        <div style="text-align: right; margin-top: 0;">
+		                                        <label for="password">Password</label>
+		                                        <ice:inputSecret tabindex="2" id="password" value="#{LoginPage.password}" required="true" requiredMessage="This field is required." action="#{LoginPage.login}"/>
+		                                        <ice:message for="password" styleClass="errorMessage"/>
+											</div>
 										</div>
                                         <div class="dvnFormPadding dvnFormMargin">
                                             <ice:commandButton tabindex="3" id="button1" value="Log in" action="#{LoginPage.login}"/>
