@@ -50,6 +50,7 @@
                          </ice:outputLink>
                         <ice:outputText value="."/>
                       </div>
+                      <ui:remove>
                       <div class="dvnManageTableCreateLink">
                             <ice:outputLink value="/dvn/faces/login/AddAccountPage.xhtml" rendered="#{VDCRequest.currentVDCId == null}">
                                 <ice:outputText value="Create User"/>
@@ -58,6 +59,7 @@
                                 <ice:outputText value="Create User"/>
                             </ice:outputLink>
                       </div>
+                      </ui:remove>
                       <ice:dataTable binding="#{OptionsPage.userTable}" cellpadding="0" cellspacing="0" width="100%"
                                      columnClasses="vdcColPadded, vdcColPadded, vdcColPadded" headerClass="list-header-left" rowClasses="list-row-even,list-row-odd" 
                                      id="dataTable1" styleClass="dvnUserPermissionsTable"
