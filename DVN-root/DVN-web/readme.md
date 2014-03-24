@@ -2,6 +2,7 @@
 
 * Modified login module to authenticate against university's LDAP server.
 * Removed all create account link from all pages.
+* Changed wordings, username to CCID.
 
 ## LDAP Authentication
 
