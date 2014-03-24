@@ -1,9 +1,10 @@
 #!/bin/bash
-#description: glassfish start stop restart
-#processname: glassfish
-#chkconfig: 2345 20 80
-# start service: $service glassfish start
-# stop service: $service glassfish stop
+# description: glassfish start stop restart
+# processname: glassfish
+# chkconfig: 2345 20 80
+# author: piyapong.charoenwattana@ualberta.ca
+# start service: $ service glassfish start
+# stop service: $ service glassfish stop
 
 GLASSFISH_HOME=/home/pcharoen/dvn/glassfish3/glassfish
 
