@@ -32,11 +32,15 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
+import javax.inject.Named;
+import javax.naming.directory.Attributes;
 import javax.servlet.http.HttpServletRequest;
 
 import com.icesoft.faces.component.ext.HtmlInputHidden;
 
+import edu.harvard.iq.dvn.core.admin.EditUserService;
 import edu.harvard.iq.dvn.core.admin.GroupServiceLocal;
+import edu.harvard.iq.dvn.core.admin.LdapAuthServiceLocal;
 import edu.harvard.iq.dvn.core.admin.LoginAffiliate;
 import edu.harvard.iq.dvn.core.admin.UserServiceLocal;
 import edu.harvard.iq.dvn.core.admin.VDCUser;
@@ -51,18 +55,31 @@ import edu.harvard.iq.dvn.core.web.common.VDCBaseBean;
  * </p>
  */
 
-// @Named("LoginPage")
+/**
+ * The LoginPage class.
+ * 
+ * @author <a href="mailto:piyapong.charoenwattana@gmail.com">Piyapong Charoenwattana</a>
+ * @version $Revision$ $Date$
+ */
+@Named("LoginPage")
 @ViewScoped
-public class LoginPage extends VDCBaseBean implements java.io.Serializable {
+public class LdapLoginPage extends VDCBaseBean implements java.io.Serializable {
 
 	@EJB
 	UserServiceLocal userService;
+
+	@EJB
+	EditUserService editUserService;
+
+	@EJB
+	LdapAuthServiceLocal ldapAuthService;
 
 	@EJB
 	GroupServiceLocal groupService;
 	@EJB
 	VDCNetworkServiceLocal vdcNetworkService;
 
+	private static final String defaultPosition = "Other";
 	private Boolean clearWorkflow;
 	String refererUrl = new String("");
 	String errMessage;
@@ -104,22 +121,68 @@ public class LoginPage extends VDCBaseBean implements java.io.Serializable {
 	 * Construct a new Page bean instance.
 	 * </p>
 	 */
-	public LoginPage() {
+	public LdapLoginPage() {
 	}
 
+	/**
+	 * The login method has been modified for ccid authentication. It will automatically create an account using
+	 * information from ldap server. The user information will be updated every time when user logging in. The
+	 * networkAdmin account still be able to login using password authentication.
+	 * 
+	 * @author pcharoen
+	 * @return null if it failed, workflow id if it successful
+	 */
 	public String login() {
 		boolean activeOnly = true;
 		VDCUser user = userService.findByUserName(userName.trim(), activeOnly);
-		if (user == null || !userService.validatePassword(user.getId(), password)) {
-			loginFailed = true;
-			errMessage = "Login failed. Please check your username and password and try again.";
-			return null;
-		} else {
-			String forward = null;
-			LoginWorkflowBean loginWorkflowBean = (LoginWorkflowBean) this.getBean("LoginWorkflowBean");
-			forward = loginWorkflowBean.processLogin(user, studyId);
 
+		// authenticate networkAdmin
+		if (user != null && user.getId() == 1 && userService.validatePassword(user.getId(), password)) {
+			String forward = null;
+			LoginWorkflowBean loginWorkflowBean = (LoginWorkflowBean) VDCBaseBean.getBean("LoginWorkflowBean");
+			forward = loginWorkflowBean.processLogin(user, studyId);
 			return forward;
+
+			// ccid authentication
+		} else if (ldapAuthService.authenticate(userName.trim(), password)) {
+			try {
+				user = userService.findByUserName(userName.trim());
+				Attributes attrs = ldapAuthService.getAttributes(userName.trim());
+				if (user == null) {
+
+					// add new user
+					editUserService.newUser();
+					user = editUserService.getUser();
+					user.setUserName((String) attrs.get("uid").get());
+					user.setActive(true);
+					user.setPosition(defaultPosition);
+
+				} else if (!user.isActive()) {
+					loginFailed = true;
+					errMessage = "Login failed. Your account is inactive.";
+					return null;
+				}
+
+				// update user info
+				user.setFirstName((String) attrs.get("givenName").get());
+				user.setLastName((String) attrs.get("sn").get());
+				user.setEmail((String) attrs.get("mail").get());
+				editUserService.save();
+
+				// forward to workflow
+				String forward = null;
+				LoginWorkflowBean loginWorkflowBean = (LoginWorkflowBean) VDCBaseBean.getBean("LoginWorkflowBean");
+				forward = loginWorkflowBean.processLogin(user, studyId);
+				return forward;
+			} catch (Exception e) {
+				loginFailed = true;
+				errMessage = "Login failed. Could not create Dataverse account.";
+				return null;
+			}
+		} else {
+			loginFailed = true;
+			errMessage = "Login failed. Please check your CCID and password and try again.";
+			return null;
 		}
 	}
 

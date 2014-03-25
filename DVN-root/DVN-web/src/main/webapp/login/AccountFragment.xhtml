@@ -13,10 +13,12 @@
                     <ice:outputLink id="linkAction1" rendered="#{VDCSession.loginBean.networkAdmin or VDCSession.loginBean.user.id == AccountPage.user.id}"  value="/dvn/faces/login/EditAccountPage.xhtml?userId=#{AccountPage.user.id}&amp;returnPage=#{returnPage}&amp;vdcId=#{VDCRequest.currentVDCId}">
                         <ice:outputText id="linkAction1Text" value="Update Account"/>
                     </ice:outputLink>
+                    <ui:remove>
                     <ice:outputText rendered="#{VDCSession.loginBean.networkAdmin or VDCSession.loginBean.user.id == AccountPage.user.id}" value=" | " />
                     <ice:outputLink rendered="#{VDCSession.loginBean.networkAdmin or VDCSession.loginBean.user.id == AccountPage.user.id}"  value="/dvn/faces/login/EditPasswordPage.xhtml?userId=#{AccountPage.user.id}&amp;returnPage=#{returnPage}&amp;vdcId=#{VDCRequest.currentVDCId}">
                         <ice:outputText id="linkAction2Text" value="Change Password"/>
                     </ice:outputLink>
+                    </ui:remove>
                     <ice:outputText value=" | " rendered="#{VDCSession.loginBean.networkAdmin and VDCRequest.currentVDC == null}"/>
                     <ice:outputLink rendered="#{VDCSession.loginBean.networkAdmin and VDCRequest.currentVDC == null}" value="/dvn/faces/networkAdmin/NetworkOptionsPage.xhtml?tab=permissions&amp;tab2=users">
                         <ice:outputText value="Go To All Users List"/>  
