@@ -32,6 +32,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
+import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
 import com.icesoft.faces.component.ext.HtmlInputHidden;
@@ -51,7 +52,7 @@ import edu.harvard.iq.dvn.core.web.common.VDCBaseBean;
  * </p>
  */
 
-// @Named("LoginPage")
+@Named("LoginPage")
 @ViewScoped
 public class LoginPage extends VDCBaseBean implements java.io.Serializable {
 
