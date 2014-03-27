@@ -42,7 +42,7 @@
                   <ice:graphicImage id="image1" value="/resources/images/icon_required.gif"/>
                 </div>
                 <div>
-                  <ice:inputText immediate="true" id="inputUserName" validator ="#{EditAccountPage.validateUserName}" value="#{EditAccountPage.user.userName}" required="true" requiredMessage="This field is required.">
+                  <ice:inputText readonly="true" immediate="true" id="inputUserName" validator ="#{EditAccountPage.validateUserName}" value="#{EditAccountPage.user.userName}" required="true" requiredMessage="This field is required.">
                   </ice:inputText>
                   <ice:message styleClass="errorMessage" for="inputUserName"/>
                 </div>
@@ -51,7 +51,7 @@
                   <ice:graphicImage value="/resources/images/icon_required.gif"/>
                 </div>
                 <div>
-                  <ice:inputText id="inputFirstName" value="#{EditAccountPage.user.firstName}" required="true" requiredMessage="This field is required."/>
+                  <ice:inputText readonly="true" id="inputFirstName" value="#{EditAccountPage.user.firstName}" required="true" requiredMessage="This field is required."/>
                   <ice:message styleClass="errorMessage" for="inputFirstName"/>
                 </div>
                 <div>
@@ -59,7 +59,7 @@
                   <ice:graphicImage value="/resources/images/icon_required.gif"/>
                 </div>
                 <div>
-                  <ice:inputText id="inputLastName" value="#{EditAccountPage.user.lastName}" required="true" requiredMessage="This field is required."/>
+                  <ice:inputText readonly="true" id="inputLastName" value="#{EditAccountPage.user.lastName}" required="true" requiredMessage="This field is required."/>
                   <ice:message styleClass="errorMessage" for="inputLastName"/>
                 </div>
                 <div>
@@ -67,7 +67,7 @@
                   <ice:graphicImage value="/resources/images/icon_required.gif"/>
                 </div>
                 <div>
-                  <ice:inputText id="inputEmail" value="#{EditAccountPage.user.email}" size="40" required="true" requiredMessage="This field is required.">
+                  <ice:inputText readonly="true" id="inputEmail" value="#{EditAccountPage.user.email}" size="40" required="true" requiredMessage="This field is required.">
                     <f:validator validatorId="EmailValidator"/>
                   </ice:inputText>
                   <ice:message styleClass="errorMessage" for="inputEmail"/>
