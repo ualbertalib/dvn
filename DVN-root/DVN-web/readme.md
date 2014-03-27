@@ -5,6 +5,7 @@
 * Changed wordings, username to CCID.
 * Removed change password link from user account page.
 * Allowed only networkAdmin to be able to change password.
+* Disabled username, firstname, lastname and email address input fields on EditAccountPage.
 
 ## LDAP Authentication
 
