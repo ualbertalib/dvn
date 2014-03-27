@@ -7,7 +7,7 @@
 * Allowed only networkAdmin to be able to change password.
 * Disabled username, firstname, lastname and email address input fields on EditAccountPage.
 
-## LDAP Authentication
+## LDAP Configuration
 
 * Add JVM Options on Glassfish configuration, domain.xml
 ```
