@@ -14,10 +14,22 @@
 	<packaging>war</packaging>
 	<name>DVN-web</name>
 	<scm>
-		<connection>scm:git:https://github.com/ualbertalib/dvn.git</connection>
 		<url>https://github.com/ualbertalib/dvn.git</url>
+		<connection>scm:git:https://github.com/ualbertalib/dvn.git</connection>
+		<developerConnection>scm:git:https://github.com/ualbertalib/dvn.git</developerConnection>
 	</scm>
-
+	<issueManagement>
+		<url>https://github.com/ualbertalib/dvn/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+	<developers>
+		<developer>
+			<email>charoenw@ualberta.ca</email>
+			<name>Piyapong Charoenwattana</name>
+			<url>https://github.com/piyapongch</url>
+			<id>piyapongch</id>
+		</developer>
+	</developers>
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -566,6 +578,9 @@
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>
+					<excludes>
+						<exclude>**/web/login/LoginPage.java</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -645,6 +660,24 @@
 							<value>${buildNumber}</value>
 						</replacement>
 					</replacements>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<show>private</show>
+					<nohelp>true</nohelp>
+					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+					<docletPath>${basedir}/docs/lib/UmlGraph.jar</docletPath>
+<!-- 					<docletArtifact> -->
+<!-- 						<groupId>org.umlgraph</groupId> -->
+<!-- 						<artifactId>doclet</artifactId> -->
+<!-- 						<version>5.1</version> -->
+<!-- 					</docletArtifact> -->
+<!-- 					<additionalparam>-views</additionalparam> -->
+					<useStandardDocletOptions>true</useStandardDocletOptions>
 				</configuration>
 			</plugin>
 		</plugins>
