@@ -3,3 +3,6 @@
 /.project
 /.readme.md.html
 /.gitignore
+/bin
+/config
+/docs
