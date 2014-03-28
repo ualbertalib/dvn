@@ -4,8 +4,11 @@
  */
 package edu.harvard.iq.dvn.core.admin;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.text.MessageFormat;
 import java.util.Hashtable;
+import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 import javax.naming.Context;
@@ -26,6 +29,7 @@ import javax.naming.directory.SearchResult;
 @Stateless
 public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 
+	private static final Logger logger = Logger.getLogger(LdapAuthServiceBean.class.getPackage().getName());
 	private static final long serialVersionUID = 832857325410696207L;
 	private static final String providerUrl = System.getProperty("dvn.ldap.provider.url");
 	private static final String userPattern = System.getProperty("dvn.ldap.user.pattern");
@@ -44,6 +48,12 @@ public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 			ctx.close();
 			return true;
 		} catch (Exception e) {
+			StringWriter ex = new StringWriter();
+			e.printStackTrace(new PrintWriter(ex));
+			if (!e.getMessage().contains("error code 49")) {
+				logger.severe("Could not authenticate! (" + e.getMessage() + ")");
+				logger.severe(ex.toString());
+			}
 			return false;
 		}
 	}
@@ -55,6 +65,10 @@ public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 			SearchResult result = searchByUid(env, uid);
 			return result.getAttributes();
 		} catch (Exception e) {
+			StringWriter ex = new StringWriter();
+			e.printStackTrace(new PrintWriter(ex));
+			logger.severe("Could not get user profile! (" + e.getMessage() + ")");
+			logger.severe(ex.toString());
 			return null;
 		}
 	}
@@ -77,6 +91,10 @@ public class LdapAuthServiceBean implements LdapAuthServiceLocal {
 			ctx.close();
 			return results.hasMore() ? results.next() : null;
 		} catch (Exception e) {
+			StringWriter ex = new StringWriter();
+			e.printStackTrace(new PrintWriter(ex));
+			logger.severe("Could not find user id! (" + e.getMessage() + ")");
+			logger.severe(ex.toString());
 			return null;
 		}
 	}
