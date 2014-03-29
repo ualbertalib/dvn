@@ -670,13 +670,12 @@
 					<show>private</show>
 					<nohelp>true</nohelp>
 					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-					<docletPath>${basedir}/docs/lib/UmlGraph.jar</docletPath>
-<!-- 					<docletArtifact> -->
-<!-- 						<groupId>org.umlgraph</groupId> -->
-<!-- 						<artifactId>doclet</artifactId> -->
-<!-- 						<version>5.1</version> -->
-<!-- 					</docletArtifact> -->
-<!-- 					<additionalparam>-views</additionalparam> -->
+					<docletArtifact>
+						<groupId>org.umlgraph</groupId>
+						<artifactId>umlgraph</artifactId>
+						<version>5.5.8-SNAPSHOT</version>
+					</docletArtifact>
+					<additionalparam>-all -views -hide java.*</additionalparam>
 					<useStandardDocletOptions>true</useStandardDocletOptions>
 				</configuration>
 			</plugin>
