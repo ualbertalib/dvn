@@ -5,8 +5,8 @@
 * The Dataverse Network Project is an open source web application for sharing, citing, analyzing, and preserving research data.
 * To learn more, please visit <http://thedata.org> 
 * Development takes place on the "develop" branch: <https://github.com/IQSS/dvn/tree/develop> 
-
-Fork from <https://github.com/IQSS/dvn> on 2014.02.23 for Digital Initiative Dataverse Network, University of Alberta Libraries
+* Fork from <https://github.com/IQSS/dvn> on 2014.02.23 for Digital Initiative Dataverse Network, University of Alberta Libraries
+* Project documents <http://ualbertalib.github.io/dvn/>
 
 ## Quick Start Guide for Eclipse User
 
@@ -27,7 +27,7 @@ Fork from <https://github.com/IQSS/dvn> on 2014.02.23 for Digital Initiative Dat
 
 ### Usage
 
-#### Execute commands
+#### Build application war file
 
 ```shell
 $ git clone https://github.com/ualbertalib/dvn.git
@@ -36,10 +36,15 @@ $ mvn package
 $ cp DVN-web/target/DVN-web.war ${autodeploy.dir}
 ```
 
-#### Build Site Documents
+#### Build project documents
 
+If you have modified
 ```shell
+$ git clone https://github.com/ualbertalib/dvn.git -b gh-pages dvn-gh-pages
 $ cd dvn/DVN-root/DVN-web
-$ mvn javadoc:javadoc -DoutputDirectory=${dvn.site.project}
-$ mvn site -DoutputDirectory=${dvn.site.project}
+$ mvn javadoc:javadoc site:site -DsiteOutputDirectory=${dvn-gh-pages.dir}
+$ cd dvn-gh-pages
+$ git add .
+$ git commit -m "Update project documents."
+$ git push
 ```
