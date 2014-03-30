@@ -3,10 +3,15 @@
 <project name="Maven" xmlns="http://maven.apache.org/DECORATION/1.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
-    <bannerLeft>
-        <name>Dataverse</name>
-        <src>https://www.beartracks.ualberta.ca/ZSS_logo.png</src>
+    <bannerRight>
+        <name>Dataverse Network</name>
+        <src>http://thedata.harvard.edu/dvn/resources/images/dvnPoweredByLogo.gif</src>
         <href>http://dataverse.library.ualberta.ca</href>
+    </bannerRight>
+    <bannerLeft>
+        <name>University of Alberta</name>
+        <src>https://www.beartracks.ualberta.ca/ZSS_logo.png</src>
+        <href>http://ualberta.ca</href>
     </bannerLeft>
 
     <skin>
@@ -25,12 +30,15 @@
 
     <body>
         <links>
-            <item name="@pcharoen" href="mailto:piyapong.charoenwattana@ualberta.ca"/>
+            <item name="piyapong.charoenwattana@ualberta.ca" href="mailto:piyapong.charoenwattana@ualberta.ca"/>
         </links>
 
-        <menu name="Regular Web Site">
-            <item name="APT Format" href="format.html"/>
-            <item name="Xdoc Example" href="xdoc.html"/>
+        <menu name="Overview">
+            <item name="Introduction" href="format.html"/>
+            <item name="Release Notes" href="xdoc.html"/>
+			<item name="User Guide" href=""/>
+			<item name="Administrator Guide" href=""/>
+			<item name="Application Guide" href="readme.html"/>
             <item name="FAQ" href="faq.html"/>
         </menu>
 
