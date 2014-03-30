@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="../ddi/DDIServiceLocal.html" title="edu.harvard.iq.dvn.core.ddi.DDIServiceLocal" alt="" coords="15,197,563,360"/>
+<area shape="rect" id="node1" href="../ddi/DDIServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,192,574,365"/>
+<area shape="rect" id="node2_1" href="../dublinCore/DCServiceLocal.html" title="edu.harvard.iq.dvn.core.dublinCore.DCServiceLocal" alt="" coords="609,232,916,325"/>
+<area shape="rect" id="node2" href="../dublinCore/DCServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="599,227,927,331"/>
+<area shape="rect" id="node3_2" href="../marc/MarcServiceLocal.html" title="edu.harvard.iq.dvn.core.marc.MarcServiceLocal" alt="" coords="961,232,1268,325"/>
+<area shape="rect" id="node3" href="../marc/MarcServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="951,227,1279,331"/>
+<area shape="rect" id="node4_3" href="./StudyExporter.html" title="edu.harvard.iq.dvn.core.study.StudyExporter" alt="" coords="481,11,1045,139"/>
+<area shape="rect" id="node4" href="./StudyExporter.html" title="&lt;TABLE&gt;" alt="" coords="470,5,1055,144"/>
+</map>

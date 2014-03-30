@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./TabularDataFile.html" title="edu.harvard.iq.dvn.core.study.TabularDataFile" alt="" coords="16,1447,224,1609"/>
+<area shape="rect" id="node1" href="./TabularDataFile.html" title="&lt;TABLE&gt;" alt="" coords="5,1441,235,1615"/>
+<area shape="rect" id="node2_1" href="./StudyFile.html" title="edu.harvard.iq.dvn.core.study.StudyFile" alt="" coords="95,11,619,1370"/>
+<area shape="rect" id="node2" href="./StudyFile.html" title="&lt;TABLE&gt;" alt="" coords="85,6,630,1375"/>
+<area shape="rect" id="node3_2" href="./OtherFile.html" title="edu.harvard.iq.dvn.core.study.OtherFile" alt="" coords="269,1464,445,1592"/>
+<area shape="rect" id="node3" href="./OtherFile.html" title="&lt;TABLE&gt;" alt="" coords="259,1459,456,1597"/>
+<area shape="rect" id="node4_3" href="./NetworkDataFile.html" title="edu.harvard.iq.dvn.core.study.NetworkDataFile" alt="" coords="491,1429,725,1627"/>
+<area shape="rect" id="node4" href="./NetworkDataFile.html" title="&lt;TABLE&gt;" alt="" coords="480,1424,736,1632"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./ServiceUnavailableExceptionMapper.html" title="edu.harvard.iq.dvn.api.exceptions.ServiceUnavailableExceptionMapper" alt="" coords="15,11,427,104"/>
+<area shape="rect" id="node1" href="./ServiceUnavailableExceptionMapper.html" title="&lt;TABLE&gt;" alt="" coords="5,5,438,109"/>
+<area shape="rect" id="node2_1" href="./ServiceUnavailableException.html" title="edu.harvard.iq.dvn.api.exceptions.ServiceUnavailableException" alt="" coords="473,19,677,95"/>
+<area shape="rect" id="node2" href="./ServiceUnavailableException.html" title="&lt;TABLE&gt;" alt="" coords="462,14,687,101"/>
+<area shape="rect" id="node3_2" href="./PermissionDeniedExceptionMapper.html" title="edu.harvard.iq.dvn.api.exceptions.PermissionDeniedExceptionMapper" alt="" coords="722,11,1131,104"/>
+<area shape="rect" id="node3" href="./PermissionDeniedExceptionMapper.html" title="&lt;TABLE&gt;" alt="" coords="711,5,1142,109"/>
+<area shape="rect" id="node4_3" href="./PermissionDeniedException.html" title="edu.harvard.iq.dvn.api.exceptions.PermissionDeniedException" alt="" coords="1177,19,1380,95"/>
+<area shape="rect" id="node4" href="./PermissionDeniedException.html" title="&lt;TABLE&gt;" alt="" coords="1167,14,1391,101"/>
+<area shape="rect" id="node5_4" href="./NotFoundExceptionMapper.html" title="edu.harvard.iq.dvn.api.exceptions.NotFoundExceptionMapper" alt="" coords="1425,11,1785,104"/>
+<area shape="rect" id="node5" href="./NotFoundExceptionMapper.html" title="&lt;TABLE&gt;" alt="" coords="1415,5,1796,109"/>
+<area shape="rect" id="node6_5" href="./NotFoundException.html" title="edu.harvard.iq.dvn.api.exceptions.NotFoundException" alt="" coords="1831,19,1985,95"/>
+<area shape="rect" id="node6" href="./NotFoundException.html" title="&lt;TABLE&gt;" alt="" coords="1821,14,1995,101"/>
+<area shape="rect" id="node7_6" href="./AuthorizationRequiredExceptionMapper.html" title="edu.harvard.iq.dvn.api.exceptions.AuthorizationRequiredExceptionMapper" alt="" coords="2031,11,2463,104"/>
+<area shape="rect" id="node7" href="./AuthorizationRequiredExceptionMapper.html" title="&lt;TABLE&gt;" alt="" coords="2020,5,2473,109"/>
+<area shape="rect" id="node8_7" href="./AuthorizationRequiredException.html" title="edu.harvard.iq.dvn.api.exceptions.AuthorizationRequiredException" alt="" coords="2508,19,2732,95"/>
+<area shape="rect" id="node8" href="./AuthorizationRequiredException.html" title="&lt;TABLE&gt;" alt="" coords="2497,14,2743,101"/>
+</map>

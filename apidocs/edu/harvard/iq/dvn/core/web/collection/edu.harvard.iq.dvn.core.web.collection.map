@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./ManageCollectionsPage.html" title="edu.harvard.iq.dvn.core.web.collection.ManageCollectionsPage" alt="" coords="15,419,278,547"/>
+<area shape="rect" id="node1" href="./ManageCollectionsPage.html" title="&lt;TABLE&gt;" alt="" coords="5,413,289,552"/>
+<area shape="rect" id="node2_1" href="./EditCollectionPage.html" title="edu.harvard.iq.dvn.core.web.collection.EditCollectionPage" alt="" coords="324,11,876,954"/>
+<area shape="rect" id="node2" href="./EditCollectionPage.html" title="&lt;TABLE&gt;" alt="" coords="313,6,887,959"/>
+<area shape="rect" id="node3_2" href="./CollectionUI.html" title="edu.harvard.iq.dvn.core.web.collection.CollectionUI" alt="" coords="921,341,1377,625"/>
+<area shape="rect" id="node3" href="./CollectionUI.html" title="&lt;TABLE&gt;" alt="" coords="911,335,1388,630"/>
+<area shape="rect" id="node4_3" href="./CollectionModel.html" title="edu.harvard.iq.dvn.core.web.collection.CollectionModel" alt="" coords="1423,271,1660,694"/>
+<area shape="rect" id="node4" href="./CollectionModel.html" title="&lt;TABLE&gt;" alt="" coords="1412,266,1671,699"/>
+<area shape="rect" id="node5_4" href="./AddLinkPage.html" title="edu.harvard.iq.dvn.core.web.collection.AddLinkPage" alt="" coords="1706,341,2025,625"/>
+<area shape="rect" id="node5" href="./AddLinkPage.html" title="&lt;TABLE&gt;" alt="" coords="1695,335,2035,630"/>
+</map>

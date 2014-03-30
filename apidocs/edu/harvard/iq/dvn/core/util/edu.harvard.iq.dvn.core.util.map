@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./WebStatisticsSupport.html" title="edu.harvard.iq.dvn.core.util.WebStatisticsSupport" alt="" coords="15,254,347,365"/>
+<area shape="rect" id="node1" href="./WebStatisticsSupport.html" title="&lt;TABLE&gt;" alt="" coords="5,249,358,370"/>
+<area shape="rect" id="node2_1" href="./TwitterUtil.html" title="edu.harvard.iq.dvn.core.util.TwitterUtil" alt="" coords="393,254,756,365"/>
+<area shape="rect" id="node2" href="./TwitterUtil.html" title="&lt;TABLE&gt;" alt="" coords="383,249,767,370"/>
+<area shape="rect" id="node3_2" href="./StringUtil.html" title="edu.harvard.iq.dvn.core.util.StringUtil" alt="" coords="802,237,1187,382"/>
+<area shape="rect" id="node3" href="./StringUtil.html" title="&lt;TABLE&gt;" alt="" coords="791,231,1198,387"/>
+<area shape="rect" id="node4_3" href="./PropertyUtil.html" title="edu.harvard.iq.dvn.core.util.PropertyUtil" alt="" coords="1233,237,1497,382"/>
+<area shape="rect" id="node4" href="./PropertyUtil.html" title="&lt;TABLE&gt;" alt="" coords="1223,231,1508,387"/>
+<area shape="rect" id="node5_4" href="./FileUtil.html" title="edu.harvard.iq.dvn.core.util.FileUtil" alt="" coords="1543,11,1985,607"/>
+<area shape="rect" id="node5" href="./FileUtil.html" title="&lt;TABLE&gt;" alt="" coords="1533,6,1995,613"/>
+<area shape="rect" id="node6_5" href="./FieldInputLevelConstant.html" title="edu.harvard.iq.dvn.core.util.FieldInputLevelConstant" alt="" coords="2030,211,2221,408"/>
+<area shape="rect" id="node6" href="./FieldInputLevelConstant.html" title="&lt;TABLE&gt;" alt="" coords="2019,205,2231,413"/>
+<area shape="rect" id="node7_6" href="./DomainMatchUtil.html" title="edu.harvard.iq.dvn.core.util.DomainMatchUtil" alt="" coords="2266,228,2846,391"/>
+<area shape="rect" id="node7" href="./DomainMatchUtil.html" title="&lt;TABLE&gt;" alt="" coords="2255,223,2857,396"/>
+<area shape="rect" id="node8_7" href="./DateUtil.html" title="edu.harvard.iq.dvn.core.util.DateUtil" alt="" coords="2892,245,3257,373"/>
+<area shape="rect" id="node8" href="./DateUtil.html" title="&lt;TABLE&gt;" alt="" coords="2881,240,3268,379"/>
+<area shape="rect" id="node9_8" href="./AlphaNumericComparator.html" title="edu.harvard.iq.dvn.core.util.AlphaNumericComparator" alt="" coords="3303,245,3561,373"/>
+<area shape="rect" id="node9" href="./AlphaNumericComparator.html" title="&lt;TABLE&gt;" alt="" coords="3293,240,3571,379"/>
+</map>

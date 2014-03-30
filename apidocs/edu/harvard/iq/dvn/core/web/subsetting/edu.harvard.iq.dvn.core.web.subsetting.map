@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./NetworkDataAnalysisPage.html" title="edu.harvard.iq.dvn.core.web.subsetting.NetworkDataAnalysisPage" alt="" coords="16,4153,621,5807"/>
+<area shape="rect" id="node1" href="./NetworkDataAnalysisPage.html" title="&lt;TABLE&gt;" alt="" coords="5,4148,632,5812"/>
+<area shape="rect" id="node2_1" href="./NetworkDataAnalysisPage.NetworkDataAnalysisEvent.html" title="edu.harvard.iq.dvn.core.web.subsetting.NetworkDataAnalysisPage.NetworkDataAnalysisEvent" alt="" coords="667,4795,1021,5165"/>
+<area shape="rect" id="node2" href="./NetworkDataAnalysisPage.NetworkDataAnalysisEvent.html" title="&lt;TABLE&gt;" alt="" coords="657,4789,1031,5171"/>
+<area shape="rect" id="node3_2" href="./NetworkDataAnalysisPage.IOExceptionInProgress.html" title="edu.harvard.iq.dvn.core.web.subsetting.NetworkDataAnalysisPage.IOExceptionInProgress" alt="" coords="1066,4933,1539,5027"/>
+<area shape="rect" id="node3" href="./NetworkDataAnalysisPage.IOExceptionInProgress.html" title="&lt;TABLE&gt;" alt="" coords="1055,4928,1550,5032"/>
+<area shape="rect" id="node4_3" href="./NetworkDataAnalysisPage.RFileResource.html" title="edu.harvard.iq.dvn.core.web.subsetting.NetworkDataAnalysisPage.RFileResource" alt="" coords="1585,4855,2197,5105"/>
+<area shape="rect" id="node4" href="./NetworkDataAnalysisPage.RFileResource.html" title="&lt;TABLE&gt;" alt="" coords="1574,4850,2207,5110"/>
+<area shape="rect" id="node5_4" href="./AnalysisResultsPage.html" title="edu.harvard.iq.dvn.core.web.subsetting.AnalysisResultsPage" alt="" coords="2243,4240,2667,5720"/>
+<area shape="rect" id="node5" href="./AnalysisResultsPage.html" title="&lt;TABLE&gt;" alt="" coords="2232,4235,2677,5725"/>
+<area shape="rect" id="node6_5" href="./AnalysisPage.html" title="edu.harvard.iq.dvn.core.web.subsetting.AnalysisPage" alt="" coords="2712,11,3323,9949"/>
+<area shape="rect" id="node6" href="./AnalysisPage.html" title="&lt;TABLE&gt;" alt="" coords="2701,5,3333,9955"/>
+<area shape="rect" id="node7_6" href="./AnalysisApplicationBean.html" title="edu.harvard.iq.dvn.core.web.subsetting.AnalysisApplicationBean" alt="" coords="3368,4847,3741,5113"/>
+<area shape="rect" id="node7" href="./AnalysisApplicationBean.html" title="&lt;TABLE&gt;" alt="" coords="3357,4841,3752,5119"/>
+</map>

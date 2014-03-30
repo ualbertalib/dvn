@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./ReleaseEvent.html" title="edu.harvard.iq.dvn.core.web.push.ReleaseEvent" alt="" coords="16,63,344,156"/>
+<area shape="rect" id="node1" href="./ReleaseEvent.html" title="&lt;TABLE&gt;" alt="" coords="5,57,355,161"/>
+<area shape="rect" id="node2_1" href="./NetworkStatsState.html" title="edu.harvard.iq.dvn.core.web.push.NetworkStatsState" alt="" coords="389,11,755,208"/>
+<area shape="rect" id="node2" href="./NetworkStatsState.html" title="&lt;TABLE&gt;" alt="" coords="379,5,765,213"/>
+<area shape="rect" id="node3_2" href="./NetworkStatsListener.html" title="edu.harvard.iq.dvn.core.web.push.NetworkStatsListener" alt="" coords="801,63,1122,156"/>
+<area shape="rect" id="node3" href="./NetworkStatsListener.html" title="&lt;TABLE&gt;" alt="" coords="790,57,1133,161"/>
+<area shape="rect" id="node4_3" href="./NetworkStatsItemDetailer.html" title="edu.harvard.iq.dvn.core.web.push.NetworkStatsItemDetailer" alt="" coords="1168,45,1843,173"/>
+<area shape="rect" id="node4" href="./NetworkStatsItemDetailer.html" title="&lt;TABLE&gt;" alt="" coords="1157,40,1853,179"/>
+</map>

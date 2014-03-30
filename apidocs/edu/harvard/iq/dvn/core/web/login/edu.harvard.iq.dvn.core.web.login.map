@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./LogoutPage.html" title="edu.harvard.iq.dvn.core.web.login.LogoutPage" alt="" coords="15,418,451,529"/>
+<area shape="rect" id="node1" href="./LogoutPage.html" title="&lt;TABLE&gt;" alt="" coords="5,413,462,534"/>
+<area shape="rect" id="node2_1" href="./LoginWorkflowBean.html" title="edu.harvard.iq.dvn.core.web.login.LoginWorkflowBean" alt="" coords="497,123,845,823"/>
+<area shape="rect" id="node2" href="./LoginWorkflowBean.html" title="&lt;TABLE&gt;" alt="" coords="486,118,855,829"/>
+<area shape="rect" id="node3_2" href="./LoginPage.html" title="edu.harvard.iq.dvn.core.web.login.LoginPage" alt="" coords="891,71,1221,875"/>
+<area shape="rect" id="node3" href="./LoginPage.html" title="&lt;TABLE&gt;" alt="" coords="880,66,1232,881"/>
+<area shape="rect" id="node4_3" href="./LdapLoginPage.html" title="edu.harvard.iq.dvn.core.web.login.LdapLoginPage" alt="" coords="1267,45,1597,901"/>
+<area shape="rect" id="node4" href="./LdapLoginPage.html" title="&lt;TABLE&gt;" alt="" coords="1256,40,1608,907"/>
+<area shape="rect" id="node5_4" href="./ForgotPasswordPage.html" title="edu.harvard.iq.dvn.core.web.login.ForgotPasswordPage" alt="" coords="1643,392,2165,555"/>
+<area shape="rect" id="node5" href="./ForgotPasswordPage.html" title="&lt;TABLE&gt;" alt="" coords="1632,387,2176,560"/>
+<area shape="rect" id="node6_5" href="./FileRequestPage.html" title="edu.harvard.iq.dvn.core.web.login.FileRequestPage" alt="" coords="2211,132,2575,815"/>
+<area shape="rect" id="node6" href="./FileRequestPage.html" title="&lt;TABLE&gt;" alt="" coords="2201,127,2586,820"/>
+<area shape="rect" id="node7_6" href="./EditPasswordPage.html" title="edu.harvard.iq.dvn.core.web.login.EditPasswordPage" alt="" coords="2621,193,3184,754"/>
+<area shape="rect" id="node7" href="./EditPasswordPage.html" title="&lt;TABLE&gt;" alt="" coords="2611,187,3195,759"/>
+<area shape="rect" id="node8_7" href="./EditAccountPage.html" title="edu.harvard.iq.dvn.core.web.login.EditAccountPage" alt="" coords="3229,288,3752,659"/>
+<area shape="rect" id="node8" href="./EditAccountPage.html" title="&lt;TABLE&gt;" alt="" coords="3219,283,3763,664"/>
+<area shape="rect" id="node9_8" href="./AddAccountPage.html" title="edu.harvard.iq.dvn.core.web.login.AddAccountPage" alt="" coords="3797,11,4320,936"/>
+<area shape="rect" id="node9" href="./AddAccountPage.html" title="&lt;TABLE&gt;" alt="" coords="3787,5,4331,941"/>
+<area shape="rect" id="node10_9" href="./AccountTermsOfUsePage.html" title="edu.harvard.iq.dvn.core.web.login.AccountTermsOfUsePage" alt="" coords="4365,357,4917,589"/>
+<area shape="rect" id="node10" href="./AccountTermsOfUsePage.html" title="&lt;TABLE&gt;" alt="" coords="4355,352,4928,595"/>
+<area shape="rect" id="node11_10" href="./AccountPage.html" title="edu.harvard.iq.dvn.core.web.login.AccountPage" alt="" coords="4963,288,5303,659"/>
+<area shape="rect" id="node11" href="./AccountPage.html" title="&lt;TABLE&gt;" alt="" coords="4953,283,5314,664"/>
+</map>

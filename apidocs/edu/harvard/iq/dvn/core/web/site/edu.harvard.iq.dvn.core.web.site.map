@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./VDCUI.html" title="edu.harvard.iq.dvn.core.web.site.VDCUI" alt="" coords="15,730,403,1326"/>
+<area shape="rect" id="node1" href="./VDCUI.html" title="&lt;TABLE&gt;" alt="" coords="5,725,414,1331"/>
+<area shape="rect" id="node2_1" href="./HarvestSitesPage.html" title="edu.harvard.iq.dvn.core.web.site.HarvestSitesPage" alt="" coords="449,851,903,1205"/>
+<area shape="rect" id="node2" href="./HarvestSitesPage.html" title="&lt;TABLE&gt;" alt="" coords="439,846,913,1210"/>
+<area shape="rect" id="node3_2" href="./EditSitePage.html" title="edu.harvard.iq.dvn.core.web.site.EditSitePage" alt="" coords="948,11,1505,2045"/>
+<area shape="rect" id="node3" href="./EditSitePage.html" title="&lt;TABLE&gt;" alt="" coords="937,5,1516,2051"/>
+<area shape="rect" id="node4_3" href="./EditHarvestSitePage.html" title="edu.harvard.iq.dvn.core.web.site.EditHarvestSitePage" alt="" coords="1551,158,2139,1898"/>
+<area shape="rect" id="node4" href="./EditHarvestSitePage.html" title="&lt;TABLE&gt;" alt="" coords="1541,153,2150,1903"/>
+<area shape="rect" id="node5_4" href="./DeleteDataversePage.html" title="edu.harvard.iq.dvn.core.web.site.DeleteDataversePage" alt="" coords="2185,808,2541,1248"/>
+<area shape="rect" id="node5" href="./DeleteDataversePage.html" title="&lt;TABLE&gt;" alt="" coords="2174,803,2551,1253"/>
+<area shape="rect" id="node6_5" href="./ClassificationUI.html" title="edu.harvard.iq.dvn.core.web.site.ClassificationUI" alt="" coords="2586,704,2958,1352"/>
+<area shape="rect" id="node6" href="./ClassificationUI.html" title="&lt;TABLE&gt;" alt="" coords="2575,699,2969,1357"/>
+<area shape="rect" id="node7_6" href="./ClassificationList.html" title="edu.harvard.iq.dvn.core.web.site.ClassificationList" alt="" coords="3003,791,3447,1265"/>
+<area shape="rect" id="node7" href="./ClassificationList.html" title="&lt;TABLE&gt;" alt="" coords="2993,785,3458,1271"/>
+<area shape="rect" id="node8_7" href="./BrowseDataversesPage.html" title="edu.harvard.iq.dvn.core.web.site.BrowseDataversesPage" alt="" coords="3493,522,4105,1534"/>
+<area shape="rect" id="node8" href="./BrowseDataversesPage.html" title="&lt;TABLE&gt;" alt="" coords="3482,517,4115,1539"/>
+<area shape="rect" id="node9_8" href="./AddSitePage.html" title="edu.harvard.iq.dvn.core.web.site.AddSitePage" alt="" coords="4150,106,4762,1950"/>
+<area shape="rect" id="node9" href="./AddSitePage.html" title="&lt;TABLE&gt;" alt="" coords="4139,101,4773,1955"/>
+</map>
