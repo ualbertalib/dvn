@@ -25,7 +25,9 @@ Fork from <https://github.com/IQSS/dvn> on 2014.02.23 for Digital Initiative Dat
 * Apache Maven 3 <http://maven.apache.org/>
 * Git <http://git-scm.com/>
 
-### Run commands
+### Usage
+
+#### Execute commands
 
 ```shell
 $ git clone https://github.com/ualbertalib/dvn.git
@@ -34,4 +36,10 @@ $ mvn package
 $ cp DVN-web/target/DVN-web.war ${autodeploy.dir}
 ```
 
+#### Build Site Documents
 
+```shell
+$ cd dvn/DVN-root/DVN-web
+$ mvn javadoc:javadoc -DoutputDirectory=${dvn.site.project}
+$ mvn site -DoutputDirectory=${dvn.site.project}
+```
