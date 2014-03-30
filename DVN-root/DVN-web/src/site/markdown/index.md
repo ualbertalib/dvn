@@ -36,7 +36,6 @@ $ cp DVN-web/target/DVN-web.war ${autodeploy.dir}
 
 #### Build project documents
 
-If you have modified
 ```shell
 $ git clone https://github.com/ualbertalib/dvn.git -b gh-pages dvn-gh-pages
 $ cd dvn/DVN-root/DVN-web
