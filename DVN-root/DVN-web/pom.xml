@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -30,6 +29,12 @@
 			<url>https://github.com/piyapongch</url>
 			<id>piyapongch</id>
 		</developer>
+		<developer>
+			<email>natasha.nunn@ualberta.ca</email>
+			<name>Natasha Nunn</name>
+			<url>https://github.com/nnunn</url>
+			<id>nnunn</id>
+		</developer>
 	</developers>
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -37,6 +42,8 @@
 		<netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 		<!-- <timestamp>${maven.build.timestamp}</timestamp> -->
 		<!-- <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm</maven.build.timestamp.format> -->
+		<docs.workspace>${basedir}/../../../../docs-workspace</docs.workspace>
+		<site.output.dir>${docs.workspace}/dvn-gh-pages</site.output.dir>
 	</properties>
 
 	<repositories>
@@ -678,7 +685,7 @@
 					</docletArtifact>
 					<additionalparam>-all -views -hide java.*</additionalparam>
 					<useStandardDocletOptions>true</useStandardDocletOptions>
-					<reportOutputDirectory>${siteOutputDirectory}</reportOutputDirectory>
+					<reportOutputDirectory>${site.output.dir}</reportOutputDirectory>
 					<destDir>apidocs</destDir>
 				</configuration>
 			</plugin>
@@ -688,11 +695,11 @@
 				<version>3.3</version>
 				<dependencies>
 					<!--
-					<dependency>
+						<dependency>
 						<groupId>org.kohsuke</groupId>
 						<artifactId>doxia-module-markdown</artifactId>
 						<version>1.2</version>
-					</dependency>
+						</dependency>
 					-->
 					<dependency>
 						<groupId>org.apache.maven.doxia</groupId>
@@ -701,8 +708,35 @@
 					</dependency>
 				</dependencies>
 				<configuration>
-					<outputDirectory>${siteOutputDirectory}</outputDirectory>
+					<outputDirectory>${site.output.dir}</outputDirectory>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>pre-site</phase>
+						<configuration>
+							<target>
+								<delete includeemptydirs="true">
+									<fileset dir="${site.output.dir}">
+										<include name="*" />
+										<exclude name=".*" />
+										<exclude name="**/apidocs/**" />
+									</fileset>
+								</delete>
+								<!--  
+								<copy tofile="${basedir}/src/site/markdown/index.md" preservelastmodified="true" verbose="true" file="${basedir}/../../readme.md" />
+								<copy tofile="${basedir}/src/site/markdown/app-guide.md" preservelastmodified="true" verbose="true" file="${basedir}/readme.md" />
+								-->
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -713,33 +747,33 @@
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 				<version>2.7</version>
 				<!--
-				<reportSets>
+					<reportSets>
 					<reportSet>
-						<reports>
-							<report>index</report>
-						</reports>
+					<reports>
+					<report>index</report>
+					</reports>
 					</reportSet>
-				</reportSets>
+					</reportSets>
 				-->
 			</plugin>
 			<!--
-			<plugin>
+				<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
 				<configuration>
-					<show>private</show>
-					<nohelp>true</nohelp>
-					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
-					<docletArtifact>
-						<groupId>org.umlgraph</groupId>
-						<artifactId>umlgraph</artifactId>
-						<version>5.5.8-SNAPSHOT</version>
-					</docletArtifact>
-					<additionalparam>-all -views -hide java.*</additionalparam>
-					<useStandardDocletOptions>true</useStandardDocletOptions>
+				<show>private</show>
+				<nohelp>true</nohelp>
+				<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+				<docletArtifact>
+				<groupId>org.umlgraph</groupId>
+				<artifactId>umlgraph</artifactId>
+				<version>5.5.8-SNAPSHOT</version>
+				</docletArtifact>
+				<additionalparam>-all -views -hide java.*</additionalparam>
+				<useStandardDocletOptions>true</useStandardDocletOptions>
 				</configuration>
-			</plugin>
+				</plugin>
 			-->
 		</plugins>
 	</reporting>

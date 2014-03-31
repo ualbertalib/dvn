@@ -41,7 +41,7 @@ $ cp DVN-web/target/DVN-web.war ${autodeploy.dir}
 ```shell
 $ git clone https://github.com/ualbertalib/dvn.git -b gh-pages dvn-gh-pages
 $ cd dvn/DVN-root/DVN-web
-$ mvn javadoc:javadoc site:site -DsiteOutputDirectory=${dvn-gh-pages.dir}
+$ mvn javadoc:javadoc site:site -Dsite.output.dir=${dvn-gh-pages.dir}
 $ cd dvn-gh-pages
 $ git add .
 $ git commit -m "Update project documents."
