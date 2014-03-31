@@ -1,4 +1,4 @@
-# Welcome to Dataverse Network University of Alberata
+# Welcome to Dataverse Network
 
 * The Dataverse Network Project is an open source web application for sharing, citing, analyzing, and preserving research data.
 * To learn more, please visit <http://thedata.org> 
