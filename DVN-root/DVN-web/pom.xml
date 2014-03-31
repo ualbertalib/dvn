@@ -28,12 +28,19 @@
 			<name>Piyapong Charoenwattana</name>
 			<url>https://github.com/piyapongch</url>
 			<id>piyapongch</id>
+			<roles>
+				<role>Lead Developer</role>
+				<role>Architect</role>
+			</roles>
 		</developer>
 		<developer>
 			<email>natasha.nunn@ualberta.ca</email>
 			<name>Natasha Nunn</name>
 			<url>https://github.com/nnunn</url>
 			<id>nnunn</id>
+			<roles>
+				<role>Web Client Developer</role>
+			</roles>
 		</developer>
 	</developers>
 	<properties>
@@ -726,9 +733,9 @@
 										<exclude name="**/apidocs/**" />
 									</fileset>
 								</delete>
-								<!--  
-								<copy tofile="${basedir}/src/site/markdown/index.md" preservelastmodified="true" verbose="true" file="${basedir}/../../readme.md" />
-								<copy tofile="${basedir}/src/site/markdown/app-guide.md" preservelastmodified="true" verbose="true" file="${basedir}/readme.md" />
+								<!--
+									<copy tofile="${basedir}/src/site/markdown/index.md" preservelastmodified="true" verbose="true" file="${basedir}/../../readme.md" />
+									<copy tofile="${basedir}/src/site/markdown/app-guide.md" preservelastmodified="true" verbose="true" file="${basedir}/readme.md" />
 								-->
 							</target>
 						</configuration>
