@@ -42,6 +42,7 @@
 			<item name="Application Guide" href="app-guide.html" />
 			<item name="FAQ" href="faq.html" />
 			<item name="Meeting Minutes and Notes" href="meetings.html" />
+			<item name="Development Documents" href="dev-docs.html" />
 			<item name="UML" href="uml.html" collapse="true">
 				<item name="Deployment Diagrams" href="uml/deployment-diagrams.html" collapse="true" />
 				<item name="Component Diagrams" href="uml/component-diagrams.html" collapse="true" />
