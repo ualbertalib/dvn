@@ -1,6 +1,6 @@
 <map id="G" name="G">
 <area shape="rect" id="node1_0" href="./RoleServiceLocal.html" title="edu.harvard.iq.dvn.core.admin.RoleServiceLocal" alt="" coords="16,11,363,191"/>
-<area shape="rect" id="node1" href="./RoleServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,6,373,197"/>
-<area shape="rect" id="node2_1" href="./RoleServiceBean.html" title="edu.harvard.iq.dvn.core.admin.RoleServiceBean" alt="" coords="16,251,363,379"/>
-<area shape="rect" id="node2" href="./RoleServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="5,245,373,384"/>
+<area shape="rect" id="node1" href="./RoleServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,5,373,196"/>
+<area shape="rect" id="node2_1" href="./RoleServiceBean.html" title="edu.harvard.iq.dvn.core.admin.RoleServiceBean" alt="" coords="16,249,363,377"/>
+<area shape="rect" id="node2" href="./RoleServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="5,244,373,383"/>
 </map>

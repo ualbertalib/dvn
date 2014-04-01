@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./DCServiceLocal.html" title="edu.harvard.iq.dvn.core.dublinCore.DCServiceLocal" alt="" coords="144,197,451,291"/>
-<area shape="rect" id="node1" href="./DCServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="133,192,461,296"/>
-<area shape="rect" id="node2_1" href="./DCServiceBean.html" title="edu.harvard.iq.dvn.core.dublinCore.DCServiceBean" alt="" coords="29,350,566,530"/>
-<area shape="rect" id="node2" href="./DCServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="18,345,577,535"/>
-<area shape="rect" id="node3_2" href="../study/StudyExporter.html" title="edu.harvard.iq.dvn.core.study.StudyExporter" alt="" coords="15,11,579,139"/>
-<area shape="rect" id="node3" href="../study/StudyExporter.html" title="&lt;TABLE&gt;" alt="" coords="5,5,590,144"/>
+<area shape="rect" id="node1_0" href="./DCServiceLocal.html" title="edu.harvard.iq.dvn.core.dublinCore.DCServiceLocal" alt="" coords="145,197,451,291"/>
+<area shape="rect" id="node1" href="./DCServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="134,192,462,296"/>
+<area shape="rect" id="node2_1" href="./DCServiceBean.html" title="edu.harvard.iq.dvn.core.dublinCore.DCServiceBean" alt="" coords="29,349,567,529"/>
+<area shape="rect" id="node2" href="./DCServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="19,344,577,535"/>
+<area shape="rect" id="node3_2" href="../study/StudyExporter.html" title="edu.harvard.iq.dvn.core.study.StudyExporter" alt="" coords="16,11,580,139"/>
+<area shape="rect" id="node3" href="../study/StudyExporter.html" title="&lt;TABLE&gt;" alt="" coords="5,5,591,144"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="../beans/NetworkStatsItemBean.html" title="edu.harvard.iq.dvn.core.web.push.beans.NetworkStatsItemBean" alt="" coords="19,355,291,743"/>
-<area shape="rect" id="node1" href="../beans/NetworkStatsItemBean.html" title="&lt;TABLE&gt;" alt="" coords="8,350,301,749"/>
+<area shape="rect" id="node1_0" href="../beans/NetworkStatsItemBean.html" title="edu.harvard.iq.dvn.core.web.push.beans.NetworkStatsItemBean" alt="" coords="19,353,291,741"/>
+<area shape="rect" id="node1" href="../beans/NetworkStatsItemBean.html" title="&lt;TABLE&gt;" alt="" coords="8,348,301,747"/>
 <area shape="rect" id="node2_1" href="./ItemType.html" title="edu.harvard.iq.dvn.core.web.push.stubs.ItemType" alt="" coords="16,11,293,295"/>
-<area shape="rect" id="node2" href="./ItemType.html" title="&lt;TABLE&gt;" alt="" coords="5,6,304,301"/>
+<area shape="rect" id="node2" href="./ItemType.html" title="&lt;TABLE&gt;" alt="" coords="5,5,304,300"/>
 </map>

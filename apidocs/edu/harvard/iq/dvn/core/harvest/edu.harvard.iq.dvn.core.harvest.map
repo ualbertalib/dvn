@@ -1,20 +1,20 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./SetDetailBean.html" title="edu.harvard.iq.dvn.core.harvest.SetDetailBean" alt="" coords="15,132,185,295"/>
-<area shape="rect" id="node1" href="./SetDetailBean.html" title="&lt;TABLE&gt;" alt="" coords="5,127,195,300"/>
-<area shape="rect" id="node2_1" href="./HarvestTimerInfo.html" title="edu.harvard.iq.dvn.core.harvest.HarvestTimerInfo" alt="" coords="230,45,1114,381"/>
-<area shape="rect" id="node2" href="./HarvestTimerInfo.html" title="&lt;TABLE&gt;" alt="" coords="219,40,1125,387"/>
-<area shape="rect" id="node3_2" href="./HarvestStudyServiceLocal.html" title="edu.harvard.iq.dvn.core.harvest.HarvestStudyServiceLocal" alt="" coords="1159,123,1745,303"/>
-<area shape="rect" id="node3" href="./HarvestStudyServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="1149,118,1755,309"/>
-<area shape="rect" id="node4_3" href="./HarvestStudyServiceBean.html" title="edu.harvard.iq.dvn.core.harvest.HarvestStudyServiceBean" alt="" coords="1159,709,1745,958"/>
-<area shape="rect" id="node4" href="./HarvestStudyServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="1149,703,1755,963"/>
-<area shape="rect" id="node5_4" href="./HarvestStudy.html" title="edu.harvard.iq.dvn.core.harvest.HarvestStudy" alt="" coords="1790,11,2239,416"/>
-<area shape="rect" id="node5" href="./HarvestStudy.html" title="&lt;TABLE&gt;" alt="" coords="1779,5,2250,421"/>
-<area shape="rect" id="node6_5" href="./HarvestFormatType.html" title="edu.harvard.iq.dvn.core.harvest.HarvestFormatType" alt="" coords="2285,71,2621,355"/>
-<area shape="rect" id="node6" href="./HarvestFormatType.html" title="&lt;TABLE&gt;" alt="" coords="2275,66,2632,361"/>
+<area shape="rect" id="node1_0" href="./SetDetailBean.html" title="edu.harvard.iq.dvn.core.harvest.SetDetailBean" alt="" coords="16,132,185,295"/>
+<area shape="rect" id="node1" href="./SetDetailBean.html" title="&lt;TABLE&gt;" alt="" coords="5,127,196,300"/>
+<area shape="rect" id="node2_1" href="./HarvestTimerInfo.html" title="edu.harvard.iq.dvn.core.harvest.HarvestTimerInfo" alt="" coords="231,45,1115,381"/>
+<area shape="rect" id="node2" href="./HarvestTimerInfo.html" title="&lt;TABLE&gt;" alt="" coords="220,40,1125,387"/>
+<area shape="rect" id="node3_2" href="./HarvestStudyServiceLocal.html" title="edu.harvard.iq.dvn.core.harvest.HarvestStudyServiceLocal" alt="" coords="1160,123,1745,303"/>
+<area shape="rect" id="node3" href="./HarvestStudyServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="1149,118,1756,309"/>
+<area shape="rect" id="node4_3" href="./HarvestStudyServiceBean.html" title="edu.harvard.iq.dvn.core.harvest.HarvestStudyServiceBean" alt="" coords="1160,709,1745,958"/>
+<area shape="rect" id="node4" href="./HarvestStudyServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="1149,703,1756,963"/>
+<area shape="rect" id="node5_4" href="./HarvestStudy.html" title="edu.harvard.iq.dvn.core.harvest.HarvestStudy" alt="" coords="1791,11,2240,416"/>
+<area shape="rect" id="node5" href="./HarvestStudy.html" title="&lt;TABLE&gt;" alt="" coords="1780,5,2251,421"/>
+<area shape="rect" id="node6_5" href="./HarvestFormatType.html" title="edu.harvard.iq.dvn.core.harvest.HarvestFormatType" alt="" coords="2286,71,2622,355"/>
+<area shape="rect" id="node6" href="./HarvestFormatType.html" title="&lt;TABLE&gt;" alt="" coords="2275,66,2633,361"/>
 <area shape="rect" id="node7_6" href="./HarvesterServiceLocal.html" title="edu.harvard.iq.dvn.core.harvest.HarvesterServiceLocal" alt="" coords="2667,63,4283,364"/>
-<area shape="rect" id="node7" href="./HarvesterServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="2656,57,4293,369"/>
+<area shape="rect" id="node7" href="./HarvesterServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="2657,57,4294,369"/>
 <area shape="rect" id="node8_7" href="./HarvesterServiceBean.html" title="edu.harvard.iq.dvn.core.harvest.HarvesterServiceBean" alt="" coords="2667,475,4283,1192"/>
-<area shape="rect" id="node8" href="./HarvesterServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="2656,469,4293,1197"/>
-<area shape="rect" id="node9_8" href="./DvnFastGetRecord.html" title="edu.harvard.iq.dvn.core.harvest.DvnFastGetRecord" alt="" coords="4328,54,4843,373"/>
-<area shape="rect" id="node9" href="./DvnFastGetRecord.html" title="&lt;TABLE&gt;" alt="" coords="4317,49,4853,378"/>
+<area shape="rect" id="node8" href="./HarvesterServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="2657,469,4294,1197"/>
+<area shape="rect" id="node9_8" href="./DvnFastGetRecord.html" title="edu.harvard.iq.dvn.core.harvest.DvnFastGetRecord" alt="" coords="4329,54,4843,373"/>
+<area shape="rect" id="node9" href="./DvnFastGetRecord.html" title="&lt;TABLE&gt;" alt="" coords="4318,49,4854,378"/>
 </map>

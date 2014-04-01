@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./StudyExporterFactoryLocal.html" title="edu.harvard.iq.dvn.core.study.StudyExporterFactoryLocal" alt="" coords="15,11,374,157"/>
-<area shape="rect" id="node1" href="./StudyExporterFactoryLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,6,385,162"/>
-<area shape="rect" id="node2_1" href="./StudyExporterFactoryBean.html" title="edu.harvard.iq.dvn.core.study.StudyExporterFactoryBean" alt="" coords="15,217,374,397"/>
-<area shape="rect" id="node2" href="./StudyExporterFactoryBean.html" title="&lt;TABLE&gt;" alt="" coords="5,211,385,402"/>
+<area shape="rect" id="node1_0" href="./StudyExporterFactoryLocal.html" title="edu.harvard.iq.dvn.core.study.StudyExporterFactoryLocal" alt="" coords="16,11,375,156"/>
+<area shape="rect" id="node1" href="./StudyExporterFactoryLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,5,385,161"/>
+<area shape="rect" id="node2_1" href="./StudyExporterFactoryBean.html" title="edu.harvard.iq.dvn.core.study.StudyExporterFactoryBean" alt="" coords="16,215,375,395"/>
+<area shape="rect" id="node2" href="./StudyExporterFactoryBean.html" title="&lt;TABLE&gt;" alt="" coords="5,209,385,400"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./GroupServiceLocal.html" title="edu.harvard.iq.dvn.core.admin.GroupServiceLocal" alt="" coords="15,11,331,191"/>
-<area shape="rect" id="node1" href="./GroupServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,6,342,197"/>
-<area shape="rect" id="node2_1" href="./GroupServiceBean.html" title="edu.harvard.iq.dvn.core.admin.GroupServiceBean" alt="" coords="15,251,331,431"/>
-<area shape="rect" id="node2" href="./GroupServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="5,246,342,437"/>
+<area shape="rect" id="node1_0" href="./GroupServiceLocal.html" title="edu.harvard.iq.dvn.core.admin.GroupServiceLocal" alt="" coords="16,11,332,191"/>
+<area shape="rect" id="node1" href="./GroupServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,5,343,196"/>
+<area shape="rect" id="node2_1" href="./GroupServiceBean.html" title="edu.harvard.iq.dvn.core.admin.GroupServiceBean" alt="" coords="16,249,332,429"/>
+<area shape="rect" id="node2" href="./GroupServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="5,244,343,435"/>
 </map>

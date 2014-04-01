@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./NetworkDataServiceLocal.html" title="edu.harvard.iq.dvn.core.analysis.NetworkDataServiceLocal" alt="" coords="16,11,757,365"/>
-<area shape="rect" id="node1" href="./NetworkDataServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,6,768,370"/>
-<area shape="rect" id="node2_1" href="./NetworkDataServiceBean.html" title="edu.harvard.iq.dvn.core.analysis.NetworkDataServiceBean" alt="" coords="16,424,757,1003"/>
-<area shape="rect" id="node2" href="./NetworkDataServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="5,419,768,1008"/>
+<area shape="rect" id="node1_0" href="./NetworkDataServiceLocal.html" title="edu.harvard.iq.dvn.core.analysis.NetworkDataServiceLocal" alt="" coords="16,11,757,364"/>
+<area shape="rect" id="node1" href="./NetworkDataServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="5,5,768,369"/>
+<area shape="rect" id="node2_1" href="./NetworkDataServiceBean.html" title="edu.harvard.iq.dvn.core.analysis.NetworkDataServiceBean" alt="" coords="16,423,757,1001"/>
+<area shape="rect" id="node2" href="./NetworkDataServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="5,417,768,1007"/>
 </map>

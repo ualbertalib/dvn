@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./MarcServiceLocal.html" title="edu.harvard.iq.dvn.core.marc.MarcServiceLocal" alt="" coords="144,197,451,291"/>
-<area shape="rect" id="node1" href="./MarcServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="133,192,461,296"/>
-<area shape="rect" id="node2_1" href="./MarcServiceBean.html" title="edu.harvard.iq.dvn.core.marc.MarcServiceBean" alt="" coords="29,349,566,477"/>
-<area shape="rect" id="node2" href="./MarcServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="18,344,577,483"/>
-<area shape="rect" id="node3_2" href="../study/StudyExporter.html" title="edu.harvard.iq.dvn.core.study.StudyExporter" alt="" coords="15,11,579,139"/>
-<area shape="rect" id="node3" href="../study/StudyExporter.html" title="&lt;TABLE&gt;" alt="" coords="5,5,590,144"/>
+<area shape="rect" id="node1_0" href="./MarcServiceLocal.html" title="edu.harvard.iq.dvn.core.marc.MarcServiceLocal" alt="" coords="145,197,451,291"/>
+<area shape="rect" id="node1" href="./MarcServiceLocal.html" title="&lt;TABLE&gt;" alt="" coords="134,192,462,296"/>
+<area shape="rect" id="node2_1" href="./MarcServiceBean.html" title="edu.harvard.iq.dvn.core.marc.MarcServiceBean" alt="" coords="29,349,567,477"/>
+<area shape="rect" id="node2" href="./MarcServiceBean.html" title="&lt;TABLE&gt;" alt="" coords="19,344,577,483"/>
+<area shape="rect" id="node3_2" href="../study/StudyExporter.html" title="edu.harvard.iq.dvn.core.study.StudyExporter" alt="" coords="16,11,580,139"/>
+<area shape="rect" id="node3" href="../study/StudyExporter.html" title="&lt;TABLE&gt;" alt="" coords="5,5,591,144"/>
 </map>

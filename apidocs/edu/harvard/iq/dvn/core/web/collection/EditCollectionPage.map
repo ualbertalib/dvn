@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node1_0" href="./EditCollectionPage.html" title="edu.harvard.iq.dvn.core.web.collection.EditCollectionPage" alt="" coords="35,649,587,1591"/>
-<area shape="rect" id="node1" href="./EditCollectionPage.html" title="&lt;TABLE&gt;" alt="" coords="24,643,597,1597"/>
+<area shape="rect" id="node1_0" href="./EditCollectionPage.html" title="edu.harvard.iq.dvn.core.web.collection.EditCollectionPage" alt="" coords="35,648,587,1591"/>
+<area shape="rect" id="node1" href="./EditCollectionPage.html" title="&lt;TABLE&gt;" alt="" coords="24,643,597,1596"/>
 <area shape="rect" id="node2_1" href="../common/VDCBaseBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCBaseBean" alt="" coords="16,11,605,589"/>
 <area shape="rect" id="node2" href="../common/VDCBaseBean.html" title="&lt;TABLE&gt;" alt="" coords="5,5,616,595"/>
 </map>

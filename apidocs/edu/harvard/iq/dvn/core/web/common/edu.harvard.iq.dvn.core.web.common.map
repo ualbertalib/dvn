@@ -1,14 +1,14 @@
 <map id="G" name="G">
 <area shape="rect" id="node1_0" href="./VDCSessionBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCSessionBean" alt="" coords="16,132,416,468"/>
 <area shape="rect" id="node1" href="./VDCSessionBean.html" title="&lt;TABLE&gt;" alt="" coords="5,127,427,473"/>
-<area shape="rect" id="node2_1" href="./VDCRequestBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCRequestBean" alt="" coords="291,649,687,1799"/>
-<area shape="rect" id="node2" href="./VDCRequestBean.html" title="&lt;TABLE&gt;" alt="" coords="281,643,698,1805"/>
+<area shape="rect" id="node2_1" href="./VDCRequestBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCRequestBean" alt="" coords="291,648,687,1799"/>
+<area shape="rect" id="node2" href="./VDCRequestBean.html" title="&lt;TABLE&gt;" alt="" coords="281,643,698,1804"/>
 <area shape="rect" id="node3_2" href="./VDCRenderBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCRenderBean" alt="" coords="1096,245,1288,355"/>
 <area shape="rect" id="node3" href="./VDCRenderBean.html" title="&lt;TABLE&gt;" alt="" coords="1085,239,1299,361"/>
 <area shape="rect" id="node4_3" href="./VDCBaseBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCBaseBean" alt="" coords="461,11,1051,589"/>
 <area shape="rect" id="node4" href="./VDCBaseBean.html" title="&lt;TABLE&gt;" alt="" coords="451,5,1061,595"/>
-<area shape="rect" id="node5_4" href="./VDCApplicationBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCApplicationBean" alt="" coords="733,1091,1309,1357"/>
-<area shape="rect" id="node5" href="./VDCApplicationBean.html" title="&lt;TABLE&gt;" alt="" coords="723,1085,1320,1363"/>
+<area shape="rect" id="node5_4" href="./VDCApplicationBean.html" title="edu.harvard.iq.dvn.core.web.common.VDCApplicationBean" alt="" coords="733,1090,1309,1357"/>
+<area shape="rect" id="node5" href="./VDCApplicationBean.html" title="&lt;TABLE&gt;" alt="" coords="723,1085,1320,1362"/>
 <area shape="rect" id="node6_5" href="./StatusMessage.html" title="edu.harvard.iq.dvn.core.web.common.StatusMessage" alt="" coords="1334,219,1594,381"/>
 <area shape="rect" id="node6" href="./StatusMessage.html" title="&lt;TABLE&gt;" alt="" coords="1323,213,1605,387"/>
 <area shape="rect" id="node7_6" href="./LoginBean.html" title="edu.harvard.iq.dvn.core.web.common.LoginBean" alt="" coords="1639,89,1921,511"/>
