@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<project name="Maven" xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project name="Dataverse" xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
 	<bannerRight>
 		<name>Dataverse Network</name>
 		<src>http://thedata.harvard.edu/dvn/resources/images/dvnPoweredByLogo.gif</src>
 		<href>http://dataverse.library.ualberta.ca</href>
 	</bannerRight>
-	
+
 	<bannerLeft>
 		<name>University of Alberta</name>
 		<src>https://www.beartracks.ualberta.ca/ZSS_logo.png</src>
@@ -33,19 +33,21 @@
 			<item name="natasha.nunn@ualberta.ca" href="mailto:natasha.nunn@ualberta.ca" />
 		</links>
 		<menu name="Overview">
-			<item name="Introduction" href="introduction.html" />
-			<item name="Release Notes" href="release-notes.html" />
-			<item name="Build Web Application" href="build.html" />
-			<item name="Quick Start Guide" href="quick-guide.html" />
-			<item name="User Guide" href="user-guide.html" />
-			<item name="Administrator Guide" href="admin-guide.html" />
-			<item name="Application Guide" href="app-guide.html" />
-			<item name="FAQ" href="faq.html" />
-			<item name="Meeting Minutes and Notes" href="meetings.html" />
-			<item name="Development Documents" href="dev-docs.html" />
-			<item name="UML" href="uml.html" collapse="true">
-				<item name="Deployment Diagrams" href="uml/deployment-diagrams.html" collapse="true" />
-				<item name="Component Diagrams" href="uml/component-diagrams.html" collapse="true" />
+			<item name="Introduction" href="overview/introduction.html" />
+			<item name="Release Notes" href="overview/release-notes.html" />
+			<item name="User Guide" href="overview/user-guide.html" />
+			<item name="Administrator Guide" href="overview/admin-guide.html" />
+			<item name="FAQ" href="overview/faq.html" />
+		</menu>
+		<menu name="Documentation">
+			<item name="Meeting Minutes and Notes" href="documentation/meetings.html" />
+			<item name="Build Application" href="documentation/build.html" />
+			<item name="Quick Start Guide" href="documentation/quick-guide.html" />
+			<item name="Application Configuration" href="documentation/app-guide.html" />
+			<item name="Development Documents" href="documentation/dev-docs.html" />
+			<item name="UML" href="documentation/uml.html" collapse="true">
+				<item name="Deployment Diagrams" href="documentation/uml/deployment-diagrams.html" collapse="true" />
+				<item name="Component Diagrams" href="documentation/uml/component-diagrams.html" collapse="true" />
 			</item>
 			<item name="JavaDocs" href="apidocs/index.html" />
 		</menu>

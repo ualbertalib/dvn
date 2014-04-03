@@ -49,8 +49,7 @@
 		<netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 		<!-- <timestamp>${maven.build.timestamp}</timestamp> -->
 		<!-- <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm</maven.build.timestamp.format> -->
-		<docs.workspace>${basedir}/../../../../docs-workspace</docs.workspace>
-		<site.output.dir>${docs.workspace}/dvn-gh-pages</site.output.dir>
+		<site.output.dir>${site.output.dir}</site.output.dir>
 	</properties>
 
 	<repositories>
@@ -728,7 +727,7 @@
 							<target>
 								<delete includeemptydirs="true">
 									<fileset dir="${site.output.dir}">
-										<include name="*" />
+										<include name="**" />
 										<exclude name=".*" />
 										<exclude name="**/apidocs/**" />
 									</fileset>
