@@ -35,6 +35,7 @@
 		<menu name="Overview">
 			<item name="Introduction" href="overview/introduction.html" />
 			<item name="Release Notes" href="overview/release-notes.html" />
+			<item name="Timeline" href="overview/timeline.html" />
 			<item name="User Guide" href="overview/user-guide.html" />
 			<item name="Administrator Guide" href="overview/admin-guide.html" />
 			<item name="FAQ" href="overview/faq.html" />

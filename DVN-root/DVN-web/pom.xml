@@ -710,7 +710,7 @@
 					<dependency>
 						<groupId>org.apache.maven.doxia</groupId>
 						<artifactId>doxia-module-markdown</artifactId>
-						<version>1.5</version>
+						<version>1.6-SNAPSHOT</version>
 					</dependency>
 				</dependencies>
 				<configuration>
@@ -722,6 +722,7 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
+						<id>antrun-pre-site</id>
 						<phase>pre-site</phase>
 						<configuration>
 							<target>
@@ -732,10 +733,25 @@
 										<exclude name="**/apidocs/**" />
 									</fileset>
 								</delete>
-								<!--
-									<copy tofile="${basedir}/src/site/markdown/index.md" preservelastmodified="true" verbose="true" file="${basedir}/../../readme.md" />
-									<copy tofile="${basedir}/src/site/markdown/app-guide.md" preservelastmodified="true" verbose="true" file="${basedir}/readme.md" />
-								-->
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>antrun-site</id>
+						<phase>post-site</phase>
+						<configuration>
+							<target>
+								<replace file="${site.output.dir}/overview/timeline.html">
+									<replacetoken>@timeline@</replacetoken>
+									<replacevalue>
+									<![CDATA[
+									<iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AvmDlifmq0jBdG5raTFfRWtOVGZuWXZqWDZRTVZYR2c&font=Bevan-PotanoSans&maptype=toner&lang=en&height=550' width='100%' height='550' frameborder='0'></iframe>
+									]]>
+									</replacevalue>
+								</replace>
 							</target>
 						</configuration>
 						<goals>
