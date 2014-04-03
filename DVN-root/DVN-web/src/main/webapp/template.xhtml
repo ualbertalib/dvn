@@ -45,6 +45,7 @@
         <link rel="stylesheet" type="text/css" href="/dvn/resources/css/dvnhome.css?v=#{VersionPage.versionNumber}"/>
         <link rel="stylesheet" type="text/css" href="/dvn/resources/css/dvnstudy.css?v=#{VersionPage.versionNumber}"/>
         <link rel="stylesheet" type="text/css" href="/dvn/resources/css/orbit.css?v=#{VersionPage.versionNumber}"/>
+        <link rel="stylesheet" type="text/css" href="/dvn/resources/css/custom.css?v=#{VersionPage.versionNumber}"/>
         <!-- IE SPECIFIC STYLESHEET -->
         <ice:outputText escape="false" nospan="true"
                         value="&#60;!--[if lte IE 8]&#62;
@@ -102,16 +103,18 @@
     </h:head>
     <!--  this template is example 4.3 in the Facelets Shortcut -->
     <h:body>
+     <div class="dvn_wrapper" id="dvn_wrapper">
         <f:loadBundle basename="Bundle" var="bundle"/>
         <f:loadBundle basename="BundlePageInfo" var="bundlePageInfo"/>
         <ui:insert name="metadata"><!-- Default Metadata --></ui:insert>
+
         <ui:insert name="title">
             <!--  ****** THIS IS THE HEADER ******** -->
             <ui:include src="views/CustomBanner.xhtml"/>
             <!-- <ui:include src="views/ConnectedBanner.xhtml"/> -->
         </ui:insert>
          
-        <div class="dvn_wrapper" id="dvn_wrapper">
+       
             <div class="dvn_content" id="content-frame">
                 <!-- required to fix a bug in firefox where the connection status box can be displayed erroneously -->
                 <ice:outputConnectionStatus showPopupOnDisconnect="false"/>
