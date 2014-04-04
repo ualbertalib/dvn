@@ -4,7 +4,11 @@
      xmlns:jsp="http://java.sun.com/JSP/Page"
      xmlns:ice="http://www.icesoft.com/icefaces/component">
     <ui:composition>
+    	<ui:remove>
         <ice:outputText nospan="true" escape="false" rendered="#{VDCRequest.currentVDCId != null and VDCRequest.displayDVNCustomization}" value="#{VDCRequest.currentVDC.header}"/>
         <ice:outputText nospan="true" escape="false" rendered="#{VDCRequest.currentVDCId == null and VDCRequest.displayDVNCustomization}" value="#{VDCRequest.currentVdcNetwork.networkPageHeader}"/>
+        </ui:remove>
+        <ice:outputText nospan="true" escape="false" rendered="#{VDCRequest.currentVDCId != null and VDCRequest.displayDVNCustomization}" value="#{bundle.customBanner}"/>
+        <ice:outputText nospan="true" escape="false" rendered="#{VDCRequest.currentVDCId == null and VDCRequest.displayDVNCustomization}" value="#{bundle.customBanner}"/>
     </ui:composition>
 </div>

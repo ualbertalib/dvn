@@ -49,7 +49,7 @@
 		<netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
 		<!-- <timestamp>${maven.build.timestamp}</timestamp> -->
 		<!-- <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm</maven.build.timestamp.format> -->
-		<site.output.dir>${site.output.dir}</site.output.dir>
+		<site.output.dir>${basedir}/target/site</site.output.dir>
 	</properties>
 
 	<repositories>
