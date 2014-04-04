@@ -700,13 +700,6 @@
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.3</version>
 				<dependencies>
-					<!--
-						<dependency>
-						<groupId>org.kohsuke</groupId>
-						<artifactId>doxia-module-markdown</artifactId>
-						<version>1.2</version>
-						</dependency>
-					-->
 					<dependency>
 						<groupId>org.apache.maven.doxia</groupId>
 						<artifactId>doxia-module-markdown</artifactId>
@@ -726,6 +719,7 @@
 						<phase>pre-site</phase>
 						<configuration>
 							<target>
+								<mkdir dir="${site.output.dir}" />
 								<delete includeemptydirs="true">
 									<fileset dir="${site.output.dir}">
 										<include name="**" />
@@ -741,7 +735,7 @@
 					</execution>
 					<execution>
 						<id>antrun-site</id>
-						<phase>post-site</phase>
+						<phase>site</phase>
 						<configuration>
 							<target>
 								<replace file="${site.output.dir}/overview/timeline.html">
