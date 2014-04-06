@@ -32,6 +32,14 @@
 			<item name="piyapong.charoenwattana@ualberta.ca" href="mailto:piyapong.charoenwattana@ualberta.ca" />
 			<item name="natasha.nunn@ualberta.ca" href="mailto:natasha.nunn@ualberta.ca" />
 		</links>
+		<!--
+		<breadcrumbs>
+			<item name="UML" href="documentation/uml.html"/>
+			<item name="Deployment Diagrams" href="documentation/uml/deployment-diagrams.html" />
+			<item name="Component Diagrams" href="documentation/uml/component-diagrams.html" />
+			<item name="JavaDocs" href="apidocs/index.html" />
+		</breadcrumbs>
+		-->
 		<menu name="Overview">
 			<item name="Introduction" href="overview/introduction.html" />
 			<item name="Release Notes" href="overview/release-notes.html" />

@@ -739,11 +739,9 @@
 						<configuration>
 							<target>
 								<replace file="${site.output.dir}/overview/timeline.html">
-									<replacetoken>@timeline@</replacetoken>
+									<replacetoken>#{timeline}</replacetoken>
 									<replacevalue>
-									<![CDATA[
-									<iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AvmDlifmq0jBdG5raTFfRWtOVGZuWXZqWDZRTVZYR2c&font=Bevan-PotanoSans&maptype=toner&lang=en&height=550' width='100%' height='550' frameborder='0'></iframe>
-									]]>
+									<![CDATA[http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AvmDlifmq0jBdG5raTFfRWtOVGZuWXZqWDZRTVZYR2c&font=Bevan-PotanoSans&maptype=toner&lang=en&height=550]]>
 									</replacevalue>
 								</replace>
 							</target>
