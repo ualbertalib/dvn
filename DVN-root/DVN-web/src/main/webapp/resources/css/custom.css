@@ -150,9 +150,9 @@ form[action="/dvn/faces/HomePage.xhtml"] > #dvn_mainSection{
 	margin-bottom: 5px;
 	width: 47%;
 }
-.dvn_content .dvn_hmpgMainMessage{
+.dvn_content #dvn_mainSection{
 	padding: 10px 5px 0px 5px;
-	min-height: 100px;
+	min-height: 120px;
 }
 .dvn_content .dvn_hmpgMainMessage span{
 	font-size: 16px !important;
