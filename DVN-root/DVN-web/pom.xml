@@ -715,6 +715,18 @@
 				<version>1.7</version>
 				<executions>
 					<execution>
+						<id>antrun-package</id>
+						<phase>package</phase>
+						<configuration>
+							<target>
+								<copy file="${basedir}/target/DVN-web.war" todir="${basedir}/war" verbose="true" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
 						<id>antrun-pre-site</id>
 						<phase>pre-site</phase>
 						<configuration>
