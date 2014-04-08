@@ -8,5 +8,7 @@
 * Allowed only networkAdmin to be able to change password.
 * Disabled username, firstname, lastname and email address input fields on EditAccountPage.
 * Added build number and date on admin settings, general page
-* Beautify, modified css and using the library logo.
-* Added project documents. 
+* Modified css and using the library logo.
+* Added project documents.
+* Used permanent banner and footer from bandle.properties.
+* Disabled custom banner and footer to prevent user from changing.
