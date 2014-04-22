@@ -592,6 +592,9 @@
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>
+					<excludes>
+						<exclude>**/web/login/LoginPage.java</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
