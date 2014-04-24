@@ -191,17 +191,17 @@
                                      maxFileCount="1" 
                                      maxFileCountMessage="Limited to 1 file upload only (for now)" 
                                      fileEntryListener="#{AddFilesPage.uploadFileListener}" 
-                                     maxFileSize="2147483648" 
+                                     maxFileSize="536870912" 
                                      maxFileSizeMessage="Submitted file is too large." 
-                                     maxTotalSize="2147483648" 
+                                     maxTotalSize="536870912" 
                                      maxTotalSizeMessage="Total size of submitted files is too large." 
                                      useOriginalFilename="true" 
                                      useSessionSubdir="false" />
-
+ 
                       <h:commandButton  id="addFile" value="Add File" style="display:none"/>
                   </span>                  
               </ice:panelGroup>
-
+              
               <!--
               This is a very basic table comprising four columns. Each
               row represents an inventory item. Each column represents a
