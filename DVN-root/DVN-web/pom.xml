@@ -445,7 +445,7 @@
 
 		<!-- non-public jar: recaptcha4j.jar -->
 		<dependency>
-			<groupId>net.tanesha.recaptcha4j</groupId>
+			<groupId>com.google.code.maven-play-plugin.net.tanesha.recaptcha4j</groupId>
 			<artifactId>recaptcha4j</artifactId>
 			<version>0.0.8</version>
 		</dependency>
@@ -592,6 +592,9 @@
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>
+					<excludes>
+						<exclude>**/web/login/LoginPage.java</exclude>
+					</excludes>
 				</configuration>
 			</plugin>
 			<plugin>
