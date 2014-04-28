@@ -1,0 +1,30 @@
+#! /bin/sh
+# chkconfig: 2345 99 01
+# description: Glassfish, /etc/init.d/glassfish
+
+GF_HOME=/home/pcharoen/dvn/glassfish3/glassfish
+
+case "$1" in
+  start)
+        echo "Starting Glassfish server: "
+        $GF_HOME/bin/asadmin start-domain domain1
+	echo
+        ;;
+  stop)
+        echo "Stopping Glassfish server: "
+        $GF_HOME/bin/asadmin stop-domain domain1
+	echo
+        ;;
+  restart)
+        echo "Stopping Glassfish server: "
+        $GF_HOME/bin/asadmin stop-domain domain1
+	echo
+        echo "Starting Glassfish server: "
+        $GF_HOME/bin/asadmin start-domain domain1
+	echo
+        ;;
+  *)
+        echo "Usage: service glassfish {start|stop|restart}"
+        exit 1
+esac
+exit 0
