@@ -1,7 +1,7 @@
 /.settings
 /.classpath
 /.project
-/.readme.md.html
+*.md.html
 /.gitignore
 /config
 /bin
