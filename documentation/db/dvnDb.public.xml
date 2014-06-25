@@ -1,0 +1,2172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="dvnDb" schema="public" type="PostgreSQL - 9.1.11">
+   <tables>
+      <table name="captcha" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="1" name="domainname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="privatekey" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="publickey" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="captcha_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="coll_adv_search_fields" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_collection_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_adv_search_fields_vdc_collection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_adv_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_collection_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="coll_adv_search_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_collection_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="coll_any_search_fields" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_collection_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_any_search_fields_vdc_collection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_any_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_collection_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="coll_any_search_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_collection_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="coll_search_result_fields" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_collection_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_search_result_fields_vdc_collection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_search_result_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_collection_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="coll_search_result_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_collection_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="coll_studies" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_studies_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="vdc_collection_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_coll_studies_vdc_collection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <primaryKey column="study_id" sequenceNumberInPK="1"/>
+         <primaryKey column="vdc_collection_id" sequenceNumberInPK="2"/>
+         <index name="coll_studies_pkey" unique="true">
+            <column ascending="true" name="study_id"/>
+            <column ascending="true" name="vdc_collection_id"/>
+         </index>
+      </table>
+      <table name="contactsubject" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('contactsubject_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="subjecttext" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="vdc_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_contactsubject_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="contactsubject_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="controlledvocabulary" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('controlledvocabulary_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="controlledvocabulary_id" foreignKey="fk_controlledvocabularyvalue_controlledvocabulary_id" implied="false" onDeleteCascade="false" table="controlledvocabularyvalue"/>
+            <child column="controlledvocabulary_id" foreignKey="fk_templatefield_controlledvocabulary_id" implied="false" onDeleteCascade="false" table="templatefield"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="fieldtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="controlledvocabulary_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="controlledvocabularyvalue" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('controlledvocabularyvalue_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="value" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="controlledvocabulary_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_controlledvocabularyvalue_controlledvocabulary_id" implied="false" onDeleteCascade="false" table="controlledvocabulary"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="controlledvocabularyvalue_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="customquestion" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('customquestion_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="customquestion_id" foreignKey="fk_customquestionresponse_customquestion_id" implied="false" onDeleteCascade="false" table="customquestionresponse"/>
+            <child column="customquestion_id" foreignKey="fk_customquestionvalue_customquestion_id" implied="false" onDeleteCascade="false" table="customquestionvalue"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="hidden" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="questionstring" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="questiontype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="required" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="guestbookquestionnaire_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_customquestion_guestbookquestionnaire_id" implied="false" onDeleteCascade="false" table="guestbookquestionnaire"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="customquestion_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="customquestionresponse" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('customquestionresponse_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="response" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="customquestion_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_customquestionresponse_customquestion_id" implied="false" onDeleteCascade="false" table="customquestion"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="guestbookresponse_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_customquestionresponse_guestbookresponse_id" implied="false" onDeleteCascade="false" table="guestbookresponse"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="customquestionresponse_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="customquestionvalue" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('customquestionvalue_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="valuestring" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="customquestion_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_customquestionvalue_customquestion_id" implied="false" onDeleteCascade="false" table="customquestion"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="customquestionvalue_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="datafileformattype" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="1" name="mimetype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="value" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="datafileformattype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="datatable" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('datatable_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="datatable_id" foreignKey="fk_datavariable_datatable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+            <child column="datatable_id" foreignKey="fk_datavariablemapping_datatable_id" implied="false" onDeleteCascade="false" table="datavariablemapping"/>
+            <child column="datatable_id" foreignKey="fk_vargrouping_datatable_id" implied="false" onDeleteCascade="false" table="vargrouping"/>
+            <child column="datatable_id" foreignKey="fk_visualizationdisplay_datatable_id" implied="false" onDeleteCascade="false" table="visualizationdisplay"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="casequantity" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="2" name="recordspercase" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="type" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="unf" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="varquantity" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="7" name="visualizationenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="8" name="studyfile_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datatable_studyfile_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="datatable_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="datavariable" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('datavariable_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="datavariable_id" foreignKey="fk_datavariablemapping_datavariable_id" implied="false" onDeleteCascade="false" table="datavariablemapping"/>
+            <child column="datavariable_id" foreignKey="fk_summarystatistic_datavariable_id" implied="false" onDeleteCascade="false" table="summarystatistic"/>
+            <child column="datavariable_id" foreignKey="fk_variablecategory_datavariable_id" implied="false" onDeleteCascade="false" table="variablecategory"/>
+            <child column="datavariable_id" foreignKey="fk_variablerange_datavariable_id" implied="false" onDeleteCascade="false" table="variablerange"/>
+            <child column="datavariable_id" foreignKey="fk_variablerangeitem_datavariable_id" implied="false" onDeleteCascade="false" table="variablerangeitem"/>
+            <child column="variable_id" foreignKey="fk_weightedvarrelationship_variable_id" implied="false" onDeleteCascade="false" table="weightedvarrelationship"/>
+            <child column="weighted_variable_id" foreignKey="fk_weightedvarrelationship_weighted_variable_id" implied="false" onDeleteCascade="false" table="weightedvarrelationship"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="concept" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="fileendposition" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="fileorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="filestartposition" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="formatcategory" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="formatschema" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="formatschemaname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="label" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="9" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="numberofdecimalpoints" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="11" name="orderedfactor" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="12" name="questiontext" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="recordsegmentnumber" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="14" name="unf" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="15" name="universe" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="16" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="17" name="weighted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="18" name="datatable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariable_datatable_id" implied="false" onDeleteCascade="false" table="datatable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="19" name="variableformattype_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariable_variableformattype_id" implied="false" onDeleteCascade="false" table="variableformattype"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="20" name="variableintervaltype_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariable_variableintervaltype_id" implied="false" onDeleteCascade="false" table="variableintervaltype"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="datavariable_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="datavariable_datatable_id_index" unique="false">
+            <column ascending="true" name="datatable_id"/>
+         </index>
+         <index name="datavariable_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="datavariablemapping" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('datavariablemapping_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="label" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="x_axis" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="datatable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariablemapping_datatable_id" implied="false" onDeleteCascade="false" table="datatable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="datavariable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariablemapping_datavariable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="vargroup_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariablemapping_vargroup_id" implied="false" onDeleteCascade="false" table="vargroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="vargrouping_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_datavariablemapping_vargrouping_id" implied="false" onDeleteCascade="false" table="vargrouping"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="datavariablemapping_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="EJB__TIMER__TBL" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="TIMERID" nullable="false" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="1" name="APPLICATIONID" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="2" name="BLOB" nullable="true" remarks="" size="2147483647" type="bytea"/>
+         <column autoUpdated="false" digits="0" id="3" name="CONTAINERID" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="CREATIONTIMERAW" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="INITIALEXPIRATIONRAW" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="INTERVALDURATION" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="7" name="LASTEXPIRATIONRAW" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="OWNERID" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="PKHASHCODE" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="10" name="SCHEDULE" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="11" name="STATE" nullable="true" remarks="" size="10" type="int4"/>
+         <primaryKey column="TIMERID" sequenceNumberInPK="1"/>
+         <index name="EJB__TIMER__TBL_pkey" unique="true"/>
+      </table>
+      <table name="fieldinputlevel" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('fieldinputlevel_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="fieldinputlevel_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="filemetadata" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('filemetadata_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="category" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="label" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="studyfile_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_filemetadata_studyfile_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="studyversion_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_filemetadata_studyversion_id" implied="false" onDeleteCascade="false" table="studyversion"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="filemetadata_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="filemetadatafield" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('filemetadatafield_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="filemetadatafield_id" foreignKey="fk_filemetadatafieldvalue_filemetadatafield_id" implied="false" onDeleteCascade="false" table="filemetadatafieldvalue"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="advancedsearchfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="basicsearchfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="customfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="6" name="fileformatname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="name" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="prefixsearchable" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="9" name="searchresultfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="10" name="title" nullable="true" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="filemetadatafield_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="filemetadatafieldvalue" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('filemetadatafieldvalue_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="strvalue" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="filemetadatafield_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_filemetadatafieldvalue_filemetadatafield_id" implied="false" onDeleteCascade="false" table="filemetadatafield"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="studyfile_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_filemetadatafieldvalue_studyfile_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="filemetadatafieldvalue_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="flagged_study_comments" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="study_comment_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_flagged_study_comments_study_comment_id" implied="false" onDeleteCascade="false" table="studycomment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="user_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_flagged_study_comments_user_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="study_comment_id" sequenceNumberInPK="1"/>
+         <primaryKey column="user_id" sequenceNumberInPK="2"/>
+         <index name="flagged_study_comments_pkey" unique="true">
+            <column ascending="true" name="study_comment_id"/>
+            <column ascending="true" name="user_id"/>
+         </index>
+      </table>
+      <table name="group_grouptypes" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="group_type_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_group_grouptypes_group_type_id" implied="false" onDeleteCascade="false" table="vargrouptype"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="group_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_group_grouptypes_group_id" implied="false" onDeleteCascade="false" table="vargroup"/>
+         </column>
+         <primaryKey column="group_type_id" sequenceNumberInPK="1"/>
+         <primaryKey column="group_id" sequenceNumberInPK="2"/>
+         <index name="group_grouptypes_pkey" unique="true">
+            <column ascending="true" name="group_type_id"/>
+            <column ascending="true" name="group_id"/>
+         </index>
+      </table>
+      <table name="guestbookquestionnaire" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('guestbookquestionnaire_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="guestbookquestionnaire_id" foreignKey="fk_customquestion_guestbookquestionnaire_id" implied="false" onDeleteCascade="false" table="customquestion"/>
+            <child column="guestbookquestionnaire_id" foreignKey="fk_guestbookresponse_guestbookquestionnaire_id" implied="false" onDeleteCascade="false" table="guestbookresponse"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="emailrequired" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="enabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="firstnamerequired" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="institutionrequired" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="lastnamerequired" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="positionrequired" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="7" name="vdc_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_guestbookquestionnaire_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="guestbookquestionnaire_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="guestbookresponse" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('guestbookresponse_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="guestbookresponse_id" foreignKey="fk_customquestionresponse_guestbookresponse_id" implied="false" onDeleteCascade="false" table="customquestionresponse"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="downloadtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="email" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="firstname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="institution" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="lastname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="position" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="7" name="responsetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="8" name="sessionid" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="guestbookquestionnaire_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_guestbookresponse_guestbookquestionnaire_id" implied="false" onDeleteCascade="false" table="guestbookquestionnaire"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="10" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_guestbookresponse_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="11" name="studyfile_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_guestbookresponse_studyfile_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="12" name="studyversion_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_guestbookresponse_studyversion_id" implied="false" onDeleteCascade="false" table="studyversion"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="13" name="vdcuser_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_guestbookresponse_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="guestbookresponse_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="handleprefix" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('handleprefix_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="handleprefix_id" foreignKey="fk_harvestingdataverse_handleprefix_id" implied="false" onDeleteCascade="false" table="harvestingdataverse"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="prefix" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="handleprefix_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="harvestformattype" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8">
+            <child column="harvestformattype_id" foreignKey="fk_harvestingdataverse_harvestformattype_id" implied="false" onDeleteCascade="false" table="harvestingdataverse"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="metadataprefix" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="stylesheetfilename" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="harvestformattype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="harvestingdataverse" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('harvestingdataverse_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="harvestingdataverse_id" foreignKey="fk_vdc_harvestingdataverse_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="failedstudycount" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="2" name="failedstudycountnonzero" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="generaterandomids" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="harvestresult" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="harvesttype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="harvestedstudycount" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="7" name="harvestedstudycountnonzero" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="harvestingnow" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="9" name="harvestingset" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="10" name="lastharvesttime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="11" name="lastsuccessfulharvesttime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="12" name="lastsuccessfulnonzeroharvesttime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="13" name="scheduledayofweek" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="14" name="schedulehourofday" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="15" name="scheduleperiod" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="16" name="scheduled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="17" name="serverurl" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="18" name="subsetrestricted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="19" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="20" name="handleprefix_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_harvestingdataverse_handleprefix_id" implied="false" onDeleteCascade="false" table="handleprefix"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="21" name="harvestformattype_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_harvestingdataverse_harvestformattype_id" implied="false" onDeleteCascade="false" table="harvestformattype"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="harvestingdataverse_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="harveststudy" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('harveststudy_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="globalid" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="lastupdatetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="removed" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="setname" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="harveststudy_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="keywordsearchterm" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="1" name="searchterm" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="keywordsearchterm_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="licensetype" numRows="6" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('licensetype_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="licensetype_id" foreignKey="fk_lockssconfig_licensetype_id" implied="false" onDeleteCascade="false" table="lockssconfig"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="imageurl" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="licenseurl" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="rdfurl" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="shortname" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="licensetype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="linked_network_studies" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_linked_network_studies_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="vdcnetwork_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_linked_network_studies_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+         </column>
+         <primaryKey column="study_id" sequenceNumberInPK="1"/>
+         <primaryKey column="vdcnetwork_id" sequenceNumberInPK="2"/>
+         <index name="linked_network_studies_pkey" unique="true">
+            <column ascending="true" name="study_id"/>
+            <column ascending="true" name="vdcnetwork_id"/>
+         </index>
+      </table>
+      <table name="lockssconfig" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('lockssconfig_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="lockssconfig_id" foreignKey="fk_lockssserver_lockssconfig_id" implied="false" onDeleteCascade="false" table="lockssserver"/>
+            <child column="lockssconfig_id" foreignKey="fk_oaiset_lockssconfig_id" implied="false" onDeleteCascade="false" table="oaiset"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="allowrestricted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="licensetext" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="serveraccess" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="licensetype_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_lockssconfig_licensetype_id" implied="false" onDeleteCascade="false" table="licensetype"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="vdc_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_lockssconfig_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="lockssconfig_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="lockssconfig_vdc_id_key" unique="true">
+            <column ascending="true" name="vdc_id"/>
+         </index>
+      </table>
+      <table name="lockssserver" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('lockssserver_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="ipaddress" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="lockssconfig_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_lockssserver_lockssconfig_id" implied="false" onDeleteCascade="false" table="lockssconfig"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="lockssserver_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="loginaffiliate" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('loginaffiliate_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="url" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="usergroup_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_loginaffiliate_usergroup_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="loginaffiliate_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="logindomain" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('logindomain_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="ipaddress" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="usergroup_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_logindomain_usergroup_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="logindomain_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="metadata" numRows="7" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('metadata_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="metadata_id" foreignKey="fk_studyabstract_metadata_id" implied="false" onDeleteCascade="false" table="studyabstract"/>
+            <child column="metadata_id" foreignKey="fk_studyauthor_metadata_id" implied="false" onDeleteCascade="false" table="studyauthor"/>
+            <child column="metadata_id" foreignKey="fk_studydistributor_metadata_id" implied="false" onDeleteCascade="false" table="studydistributor"/>
+            <child column="metadata_id" foreignKey="fk_studyfieldvalue_metadata_id" implied="false" onDeleteCascade="false" table="studyfieldvalue"/>
+            <child column="metadata_id" foreignKey="fk_studygeobounding_metadata_id" implied="false" onDeleteCascade="false" table="studygeobounding"/>
+            <child column="metadata_id" foreignKey="fk_studygrant_metadata_id" implied="false" onDeleteCascade="false" table="studygrant"/>
+            <child column="metadata_id" foreignKey="fk_studykeyword_metadata_id" implied="false" onDeleteCascade="false" table="studykeyword"/>
+            <child column="metadata_id" foreignKey="fk_studynote_metadata_id" implied="false" onDeleteCascade="false" table="studynote"/>
+            <child column="metadata_id" foreignKey="fk_studyotherid_metadata_id" implied="false" onDeleteCascade="false" table="studyotherid"/>
+            <child column="metadata_id" foreignKey="fk_studyotherref_metadata_id" implied="false" onDeleteCascade="false" table="studyotherref"/>
+            <child column="metadata_id" foreignKey="fk_studyproducer_metadata_id" implied="false" onDeleteCascade="false" table="studyproducer"/>
+            <child column="metadata_id" foreignKey="fk_studyrelmaterial_metadata_id" implied="false" onDeleteCascade="false" table="studyrelmaterial"/>
+            <child column="metadata_id" foreignKey="fk_studyrelpublication_metadata_id" implied="false" onDeleteCascade="false" table="studyrelpublication"/>
+            <child column="metadata_id" foreignKey="fk_studyrelstudy_metadata_id" implied="false" onDeleteCascade="false" table="studyrelstudy"/>
+            <child column="metadata_id" foreignKey="fk_studysoftware_metadata_id" implied="false" onDeleteCascade="false" table="studysoftware"/>
+            <child column="metadata_id" foreignKey="fk_studytopicclass_metadata_id" implied="false" onDeleteCascade="false" table="studytopicclass"/>
+            <child column="metadata_id" foreignKey="fk_studyversion_metadata_id" implied="false" onDeleteCascade="false" table="studyversion"/>
+            <child column="metadata_id" foreignKey="fk_template_metadata_id" implied="false" onDeleteCascade="false" table="template"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="unf" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="accesstosources" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="actionstominimizeloss" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="availabilitystatus" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="characteristicofsources" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="6" name="citationrequirements" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="cleaningoperations" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="8" name="collectionmode" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="9" name="collectionsize" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="10" name="conditions" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="11" name="confidentialitydeclaration" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="12" name="contact" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="controloperations" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="14" name="country" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="15" name="datacollectionsituation" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="16" name="datacollector" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="17" name="datasources" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="18" name="dateofcollectionend" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="19" name="dateofcollectionstart" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="20" name="dateofdeposit" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="21" name="depositor" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="22" name="depositorrequirements" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="23" name="deviationsfromsampledesign" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="24" name="disclaimer" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="25" name="distributiondate" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="26" name="distributorcontact" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="27" name="distributorcontactaffiliation" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="28" name="distributorcontactemail" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="29" name="frequencyofdatacollection" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="30" name="fundingagency" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="31" name="geographiccoverage" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="32" name="geographicunit" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="33" name="harvestdvntermsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="34" name="harvestdvtermsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="35" name="harvestholdings" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="36" name="kindofdata" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="37" name="originofsources" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="38" name="originalarchive" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="39" name="otherdataappraisal" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="40" name="placeofaccess" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="41" name="productiondate" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="42" name="productionplace" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="43" name="researchinstrument" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="44" name="responserate" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="45" name="restrictions" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="46" name="samplingerrorestimate" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="47" name="samplingprocedure" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="48" name="seriesinformation" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="49" name="seriesname" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="50" name="specialpermissions" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="51" name="studycompletion" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="52" name="studylevelerrornotes" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="53" name="studyversion" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="54" name="subtitle" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="55" name="timemethod" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="56" name="timeperiodcoveredend" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="57" name="timeperiodcoveredstart" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="58" name="title" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="59" name="unitofanalysis" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="60" name="universe" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="61" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="62" name="versiondate" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="63" name="weighting" nullable="true" remarks="" size="2147483647" type="text"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="metadata_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="metadata_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="metadataformattype" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="1" name="formatschema" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="mimetype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="namespace" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="partialexcludesupported" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="partialselectsupported" nullable="true" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="metadataformattype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="networkcontactsubject" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('networkcontactsubject_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="subjecttext" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="vdcnetwork_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_networkcontactsubject_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="networkcontactsubject_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="networkrole" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('networkrole_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="networkrole_id" foreignKey="fk_networkrolerequest_networkrole_id" implied="false" onDeleteCascade="false" table="networkrolerequest"/>
+            <child column="networkrole_id" foreignKey="fk_pagedef_networkrole_id" implied="false" onDeleteCascade="false" table="pagedef"/>
+            <child column="networkrole_id" foreignKey="fk_vdcuser_networkrole_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="networkrole_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="networkrolerequest" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('networkrolerequest_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="networkrole_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_networkrolerequest_networkrole_id" implied="false" onDeleteCascade="false" table="networkrole"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="vdcuser_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_networkrolerequest_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="networkrolerequest_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="oaiset" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('oaiset_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="definition" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="spec" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="lockssconfig_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_oaiset_lockssconfig_id" implied="false" onDeleteCascade="false" table="lockssconfig"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="oaiset_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="oaiset_lockssconfig_id_key" unique="true">
+            <column ascending="true" name="lockssconfig_id"/>
+         </index>
+      </table>
+      <table name="pagedef" numRows="74" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('pagedef_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="path" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="networkrole_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_pagedef_networkrole_id" implied="false" onDeleteCascade="false" table="networkrole"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="role_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_pagedef_role_id" implied="false" onDeleteCascade="false" table="role"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="pagedef_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="unq_pagedef_0" unique="true">
+            <column ascending="true" name="path"/>
+         </index>
+         <index name="unq_pagedef_1" unique="true">
+            <column ascending="true" name="name"/>
+         </index>
+      </table>
+      <table name="remoteaccessauth" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('remoteaccessauth_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="authcred1" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="authcred2" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="authcred3" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="authcred4" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="authtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="hostname" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="remoteaccessauth_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="role" numRows="4" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('role_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="role_id" foreignKey="fk_pagedef_role_id" implied="false" onDeleteCascade="false" table="pagedef"/>
+            <child column="role_id" foreignKey="fk_rolerequest_role_id" implied="false" onDeleteCascade="false" table="rolerequest"/>
+            <child column="role_id" foreignKey="fk_vdcrole_role_id" implied="false" onDeleteCascade="false" table="vdcrole"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="role_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="rolerequest" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('rolerequest_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="role_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_rolerequest_role_id" implied="false" onDeleteCascade="false" table="role"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_rolerequest_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="vdcuser_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_rolerequest_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="rolerequest_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="search_result_fields" numRows="28" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_search_result_fields_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_search_result_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="search_result_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="sequence" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="seq_name" nullable="false" remarks="" size="50" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="1" name="seq_count" nullable="true" remarks="" size="38" type="numeric"/>
+         <primaryKey column="seq_name" sequenceNumberInPK="1"/>
+         <index name="sequence_pkey" unique="true">
+            <column ascending="true" name="seq_name"/>
+         </index>
+      </table>
+      <table name="study" numRows="4" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('study_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="study_id" foreignKey="fk_coll_studies_study_id" implied="false" onDeleteCascade="false" table="coll_studies"/>
+            <child column="study_id" foreignKey="fk_guestbookresponse_study_id" implied="false" onDeleteCascade="false" table="guestbookresponse"/>
+            <child column="study_id" foreignKey="fk_linked_network_studies_study_id" implied="false" onDeleteCascade="false" table="linked_network_studies"/>
+            <child column="studies_id" foreignKey="fk_study_studyfield_studies_id" implied="false" onDeleteCascade="false" table="study_studyfield"/>
+            <child column="studies_id" foreignKey="fk_study_usergroup_studies_id" implied="false" onDeleteCascade="false" table="study_usergroup"/>
+            <child column="studies_id" foreignKey="fk_study_vdcuser_studies_id" implied="false" onDeleteCascade="false" table="study_vdcuser"/>
+            <child column="study_id" foreignKey="fk_studyaccessrequest_study_id" implied="false" onDeleteCascade="false" table="studyaccessrequest"/>
+            <child column="study_id" foreignKey="fk_studydownload_study_id" implied="false" onDeleteCascade="false" table="studydownload"/>
+            <child column="study_id" foreignKey="fk_studyfile_study_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+            <child column="study_id" foreignKey="fk_studyfileactivity_study_id" implied="false" onDeleteCascade="false" table="studyfileactivity"/>
+            <child column="study_id" foreignKey="fk_studylock_study_id" implied="false" onDeleteCascade="false" table="studylock"/>
+            <child column="study_id" foreignKey="fk_studyrequest_study_id" implied="false" onDeleteCascade="false" table="studyrequest"/>
+            <child column="study_id" foreignKey="fk_studyversion_study_id" implied="false" onDeleteCascade="false" table="studyversion"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="authority" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="2" name="createtime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="harvestidentifier" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="isharvested" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="6" id="5" name="lastexporttime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="lastindextime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="7" name="lastupdatetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="8" name="numberofdownloads" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="9" name="protocol" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="10" name="requestaccess" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="11" name="restricted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="12" name="studyid" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="13" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="14" name="creator_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_creator_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="15" name="lastupdater_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_lastupdater_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="16" name="owner_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_owner_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="17" name="reviewer_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_reviewer_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="18" name="template_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_template_id" implied="false" onDeleteCascade="false" table="template"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="study_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="study_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="study_owner_id_index" unique="false">
+            <column ascending="true" name="owner_id"/>
+         </index>
+         <index name="unq_study_0" unique="true">
+            <column ascending="true" name="authority"/>
+            <column ascending="true" name="protocol"/>
+            <column ascending="true" name="studyid"/>
+         </index>
+      </table>
+      <table name="study_studyfield" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="studies_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_studyfield_studies_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="summaryfields_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_studyfield_summaryfields_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="studies_id" sequenceNumberInPK="1"/>
+         <primaryKey column="summaryfields_id" sequenceNumberInPK="2"/>
+         <index name="study_studyfield_pkey" unique="true">
+            <column ascending="true" name="studies_id"/>
+            <column ascending="true" name="summaryfields_id"/>
+         </index>
+      </table>
+      <table name="study_usergroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="studies_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_usergroup_studies_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="allowedgroups_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_usergroup_allowedgroups_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <primaryKey column="studies_id" sequenceNumberInPK="1"/>
+         <primaryKey column="allowedgroups_id" sequenceNumberInPK="2"/>
+         <index name="study_usergroup_pkey" unique="true">
+            <column ascending="true" name="studies_id"/>
+            <column ascending="true" name="allowedgroups_id"/>
+         </index>
+      </table>
+      <table name="study_vdcuser" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="studies_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_vdcuser_studies_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="allowedusers_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_study_vdcuser_allowedusers_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="studies_id" sequenceNumberInPK="1"/>
+         <primaryKey column="allowedusers_id" sequenceNumberInPK="2"/>
+         <index name="study_vdcuser_pkey" unique="true">
+            <column ascending="true" name="studies_id"/>
+            <column ascending="true" name="allowedusers_id"/>
+         </index>
+      </table>
+      <table name="studyabstract" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyabstract_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="date" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyabstract_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyabstract_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyabstract_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyaccessrequest" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyaccessrequest_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyaccessrequest_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="studyfile_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyaccessrequest_studyfile_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="vdcuser_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyaccessrequest_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyaccessrequest_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studyauthor" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyauthor_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="affiliation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="idtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="idvalue" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="7" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyauthor_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyauthor_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyauthor_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studycomment" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studycomment_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="study_comment_id" foreignKey="fk_flagged_study_comments_study_comment_id" implied="false" onDeleteCascade="false" table="flagged_study_comments"/>
+            <child column="flaggedstudycomments_id" foreignKey="fk_vdcuser_studycomment_flaggedstudycomments_id" implied="false" onDeleteCascade="false" table="vdcuser_studycomment"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="comment" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="6" id="2" name="createtime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="status" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="commentcreator_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studycomment_commentcreator_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="studyversion_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studycomment_studyversion_id" implied="false" onDeleteCascade="false" table="studyversion"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studycomment_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studydistributor" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studydistributor_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="abbreviation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="affiliation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="logo" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="url" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studydistributor_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studydistributor_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studydistributor_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studydownload" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studydownload_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="numberofdownloads" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="study_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studydownload_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studydownload_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studyfield" numRows="116" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyfield_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="study_field_id" foreignKey="fk_coll_adv_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="coll_adv_search_fields"/>
+            <child column="study_field_id" foreignKey="fk_coll_any_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="coll_any_search_fields"/>
+            <child column="study_field_id" foreignKey="fk_coll_search_result_fields_study_field_id" implied="false" onDeleteCascade="false" table="coll_search_result_fields"/>
+            <child column="study_field_id" foreignKey="fk_search_result_fields_study_field_id" implied="false" onDeleteCascade="false" table="search_result_fields"/>
+            <child column="summaryfields_id" foreignKey="fk_study_studyfield_summaryfields_id" implied="false" onDeleteCascade="false" table="study_studyfield"/>
+            <child column="parentstudyfield_id" foreignKey="fk_studyfield_parentstudyfield_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+            <child column="studyfield_id" foreignKey="fk_studyfieldvalue_studyfield_id" implied="false" onDeleteCascade="false" table="studyfieldvalue"/>
+            <child column="study_field_id" foreignKey="fk_summary_fields_study_field_id" implied="false" onDeleteCascade="false" table="summary_fields"/>
+            <child column="studyfield_id" foreignKey="fk_templatefield_studyfield_id" implied="false" onDeleteCascade="false" table="templatefield"/>
+            <child column="study_field_id" foreignKey="fk_vdc_adv_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="vdc_adv_search_fields"/>
+            <child column="study_field_id" foreignKey="fk_vdc_any_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="vdc_any_search_fields"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="advancedsearchfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="allowcontrolledvocabulary" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="allowmultiples" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="basicsearchfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="customfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="7" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="8" name="fieldtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="name" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="10" name="searchresultfield" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="11" name="title" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="12" name="parentstudyfield_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfield_parentstudyfield_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyfield_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studyfieldvalue" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyfieldvalue_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="strvalue" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfieldvalue_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="studyfield_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfieldvalue_studyfield_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyfieldvalue_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studyfile" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyfile_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="studyfile_id" foreignKey="fk_datatable_studyfile_id" implied="false" onDeleteCascade="false" table="datatable"/>
+            <child column="studyfile_id" foreignKey="fk_filemetadata_studyfile_id" implied="false" onDeleteCascade="false" table="filemetadata"/>
+            <child column="studyfile_id" foreignKey="fk_filemetadatafieldvalue_studyfile_id" implied="false" onDeleteCascade="false" table="filemetadatafieldvalue"/>
+            <child column="studyfile_id" foreignKey="fk_guestbookresponse_studyfile_id" implied="false" onDeleteCascade="false" table="guestbookresponse"/>
+            <child column="studyfile_id" foreignKey="fk_studyaccessrequest_studyfile_id" implied="false" onDeleteCascade="false" table="studyaccessrequest"/>
+            <child column="studyfiles_id" foreignKey="fk_studyfile_usergroup_studyfiles_id" implied="false" onDeleteCascade="false" table="studyfile_usergroup"/>
+            <child column="studyfiles_id" foreignKey="fk_studyfile_vdcuser_studyfiles_id" implied="false" onDeleteCascade="false" table="studyfile_vdcuser"/>
+            <child column="studyfile_id" foreignKey="fk_studyfileactivity_studyfile_id" implied="false" onDeleteCascade="false" table="studyfileactivity"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="fileclass" nullable="true" remarks="" size="31" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="allowaccessrequest" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="filesystemlocation" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="filesystemname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="filetype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="md5" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="originalfiletype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="requestaccess" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="10" name="restricted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="11" name="unf" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="12" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="13" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfile_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyfile_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyfile_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studyfile_usergroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="allowedgroups_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfile_usergroup_allowedgroups_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="studyfiles_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfile_usergroup_studyfiles_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <primaryKey column="allowedgroups_id" sequenceNumberInPK="1"/>
+         <primaryKey column="studyfiles_id" sequenceNumberInPK="2"/>
+         <index name="studyfile_usergroup_pkey" unique="true">
+            <column ascending="true" name="allowedgroups_id"/>
+            <column ascending="true" name="studyfiles_id"/>
+         </index>
+      </table>
+      <table name="studyfile_vdcuser" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="studyfiles_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfile_vdcuser_studyfiles_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="allowedusers_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfile_vdcuser_allowedusers_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="studyfiles_id" sequenceNumberInPK="1"/>
+         <primaryKey column="allowedusers_id" sequenceNumberInPK="2"/>
+         <index name="studyfile_vdcuser_pkey" unique="true">
+            <column ascending="true" name="studyfiles_id"/>
+            <column ascending="true" name="allowedusers_id"/>
+         </index>
+      </table>
+      <table name="studyfileactivity" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyfileactivity_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="downloadcount" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="2" name="lastdownloadtime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfileactivity_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="studyfile_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyfileactivity_studyfile_id" implied="false" onDeleteCascade="false" table="studyfile"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyfileactivity_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyfileactivity_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyfileactivity_study_id_index" unique="false">
+            <column ascending="true" name="study_id"/>
+         </index>
+         <index name="studyfileactivity_studyfile_id_index" unique="false">
+            <column ascending="true" name="studyfile_id"/>
+         </index>
+      </table>
+      <table name="studygeobounding" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studygeobounding_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="eastlongitude" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="northlatitude" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="southlatitude" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="westlongitude" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studygeobounding_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studygeobounding_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studygeobounding_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studygrant" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studygrant_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="agency" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="number" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studygrant_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studygrant_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studygrant_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studykeyword" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studykeyword_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="value" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="vocab" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="vocaburi" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studykeyword_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studykeyword_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studykeyword_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studylock" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studylock_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="detail" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="starttime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="3" name="user_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studylock_user_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studylock_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studylock_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studynote" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studynote_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="subject" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="type" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studynote_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studynote_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studynote_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyotherid" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyotherid_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="agency" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="otherid" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyotherid_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyotherid_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyotherid_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyotherref" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyotherref_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyotherref_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyotherref_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyotherref_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyproducer" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyproducer_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="abbreviation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="affiliation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="logo" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="url" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyproducer_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyproducer_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyproducer_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyrelmaterial" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyrelmaterial_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyrelmaterial_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyrelmaterial_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyrelmaterial_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyrelpublication" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyrelpublication_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="idnumber" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="idtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="replicationdata" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="6" name="url" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyrelpublication_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyrelpublication_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyrelpublication_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyrelstudy" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyrelstudy_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="text" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyrelstudy_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyrelstudy_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studyrelstudy_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyrequest" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyrequest_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyrequest_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="vdcuser_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyrequest_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyrequest_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="studysoftware" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studysoftware_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="softwareversion" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studysoftware_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studysoftware_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studysoftware_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studytopicclass" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studytopicclass_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="value" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="vocab" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="vocaburi" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studytopicclass_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studytopicclass_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="studytopicclass_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="studyversion" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('studyversion_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="studyversion_id" foreignKey="fk_filemetadata_studyversion_id" implied="false" onDeleteCascade="false" table="filemetadata"/>
+            <child column="studyversion_id" foreignKey="fk_guestbookresponse_studyversion_id" implied="false" onDeleteCascade="false" table="guestbookresponse"/>
+            <child column="studyversion_id" foreignKey="fk_studycomment_studyversion_id" implied="false" onDeleteCascade="false" table="studycomment"/>
+            <child column="studyversion_id" foreignKey="fk_versioncontributor_studyversion_id" implied="false" onDeleteCascade="false" table="versioncontributor"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="archivenote" nullable="true" remarks="" size="1000" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="2" name="archivetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="3" name="createtime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="4" name="deaccessionlink" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="5" name="lastupdatetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="6" name="releasetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="7" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="versionnote" nullable="true" remarks="" size="1000" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="versionnumber" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="10" name="versionstate" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="11" name="study_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyversion_study_id" implied="false" onDeleteCascade="false" table="study"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="12" name="metadata_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_studyversion_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="studyversion_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="summary_fields" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_summary_fields_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_summary_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="summary_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="summarystatistic" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('summarystatistic_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="value" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="datavariable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_summarystatistic_datavariable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="type_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_summarystatistic_type_id" implied="false" onDeleteCascade="false" table="summarystatistictype"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="summarystatistic_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="summarystatistic_datavariable_id_index" unique="false">
+            <column ascending="true" name="datavariable_id"/>
+         </index>
+         <index name="summarystatistic_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="summarystatistictype" numRows="8" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8">
+            <child column="type_id" foreignKey="fk_summarystatistic_type_id" implied="false" onDeleteCascade="false" table="summarystatistic"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="summarystatistictype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="template" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('template_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="template_id" foreignKey="fk_study_template_id" implied="false" onDeleteCascade="false" table="study"/>
+            <child column="template_id" foreignKey="fk_templatefield_template_id" implied="false" onDeleteCascade="false" table="templatefield"/>
+            <child column="template_id" foreignKey="fk_templatefilecategory_template_id" implied="false" onDeleteCascade="false" table="templatefilecategory"/>
+            <child column="defaulttemplate_id" foreignKey="fk_vdc_defaulttemplate_id" implied="false" onDeleteCascade="false" table="vdc"/>
+            <child column="defaulttemplate_id" foreignKey="fk_vdcnetwork_defaulttemplate_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="enabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="vdc_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_template_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="vdcnetwork_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_template_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="metadata_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_template_metadata_id" implied="false" onDeleteCascade="false" table="metadata"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="template_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="template_metadata_id_index" unique="false">
+            <column ascending="true" name="metadata_id"/>
+         </index>
+      </table>
+      <table name="templatefield" numRows="232" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('templatefield_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="defaultvalue" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="fieldinputlevelstring" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="5" name="controlledvocabulary_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_templatefield_controlledvocabulary_id" implied="false" onDeleteCascade="false" table="controlledvocabulary"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="studyfield_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_templatefield_studyfield_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="7" name="template_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_templatefield_template_id" implied="false" onDeleteCascade="false" table="template"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="templatefield_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="templatefilecategory" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('templatefilecategory_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="template_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_templatefilecategory_template_id" implied="false" onDeleteCascade="false" table="template"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="templatefilecategory_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="termsofuse" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('termsofuse_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="6" id="1" name="createtime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="enabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="terms" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="4" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_termsofuse_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="termsofuse_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="twittercredentials" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('twittercredentials_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="accesstoken" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="accesstokensecret" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="vdc_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_twittercredentials_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="twittercredentials_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="twittercredentials_vdc_id_key" unique="true">
+            <column ascending="true" name="vdc_id"/>
+         </index>
+      </table>
+      <table name="usergroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('usergroup_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="usergroup_id" foreignKey="fk_loginaffiliate_usergroup_id" implied="false" onDeleteCascade="false" table="loginaffiliate"/>
+            <child column="usergroup_id" foreignKey="fk_logindomain_usergroup_id" implied="false" onDeleteCascade="false" table="logindomain"/>
+            <child column="allowedgroups_id" foreignKey="fk_study_usergroup_allowedgroups_id" implied="false" onDeleteCascade="false" table="study_usergroup"/>
+            <child column="allowedgroups_id" foreignKey="fk_studyfile_usergroup_allowedgroups_id" implied="false" onDeleteCascade="false" table="studyfile_usergroup"/>
+            <child column="allowedfilegroups_id" foreignKey="fk_vdc_fileusergroup_allowedfilegroups_id" implied="false" onDeleteCascade="false" table="vdc_fileusergroup"/>
+            <child column="allowedgroups_id" foreignKey="fk_vdc_usergroup_allowedgroups_id" implied="false" onDeleteCascade="false" table="vdc_usergroup"/>
+            <child column="usergroups_id" foreignKey="fk_vdcuser_usergroup_usergroups_id" implied="false" onDeleteCascade="false" table="vdcuser_usergroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="friendlyname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="pinservice" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="usergroup_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vargroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vargroup_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="vargroup_id" foreignKey="fk_datavariablemapping_vargroup_id" implied="false" onDeleteCascade="false" table="datavariablemapping"/>
+            <child column="group_id" foreignKey="fk_group_grouptypes_group_id" implied="false" onDeleteCascade="false" table="group_grouptypes"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="units" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="vargrouping_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vargroup_vargrouping_id" implied="false" onDeleteCascade="false" table="vargrouping"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vargroup_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vargrouping" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vargrouping_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="vargrouping_id" foreignKey="fk_datavariablemapping_vargrouping_id" implied="false" onDeleteCascade="false" table="datavariablemapping"/>
+            <child column="vargrouping_id" foreignKey="fk_vargroup_vargrouping_id" implied="false" onDeleteCascade="false" table="vargroup"/>
+            <child column="vargrouping_id" foreignKey="fk_vargrouptype_vargrouping_id" implied="false" onDeleteCascade="false" table="vargrouptype"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="groupingtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="datatable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vargrouping_datatable_id" implied="false" onDeleteCascade="false" table="datatable"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vargrouping_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vargrouptype" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vargrouptype_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="group_type_id" foreignKey="fk_group_grouptypes_group_type_id" implied="false" onDeleteCascade="false" table="group_grouptypes"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="vargrouping_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vargrouptype_vargrouping_id" implied="false" onDeleteCascade="false" table="vargrouping"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vargrouptype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="variablecategory" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('variablecategory_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="catorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="17" id="2" name="frequency" nullable="true" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="3" name="label" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="missing" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="value" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="6" name="datavariable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_variablecategory_datavariable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="variablecategory_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="variablecategory_datavariable_id_index" unique="false">
+            <column ascending="true" name="datavariable_id"/>
+         </index>
+         <index name="variablecategory_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="variableformattype" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8">
+            <child column="variableformattype_id" foreignKey="fk_datavariable_variableformattype_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="variableformattype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="variableintervaltype" numRows="4" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8">
+            <child column="variableintervaltype_id" foreignKey="fk_datavariable_variableintervaltype_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="variableintervaltype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="variablerange" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('variablerange_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="beginvalue" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="endvalue" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="beginvaluetype_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_variablerange_beginvaluetype_id" implied="false" onDeleteCascade="false" table="variablerangetype"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="datavariable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_variablerange_datavariable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="endvaluetype_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_variablerange_endvaluetype_id" implied="false" onDeleteCascade="false" table="variablerangetype"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="variablerange_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="variablerange_datavariable_id_index" unique="false">
+            <column ascending="true" name="datavariable_id"/>
+         </index>
+         <index name="variablerange_id_index" unique="false">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="variablerangeitem" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('variablerangeitem_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="value" nullable="true" remarks="" size="38" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="2" name="datavariable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_variablerangeitem_datavariable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="variablerangeitem_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="variablerangetype" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="int8">
+            <child column="beginvaluetype_id" foreignKey="fk_variablerange_beginvaluetype_id" implied="false" onDeleteCascade="false" table="variablerange"/>
+            <child column="endvaluetype_id" foreignKey="fk_variablerange_endvaluetype_id" implied="false" onDeleteCascade="false" table="variablerange"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="variablerangetype_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdc" numRows="7" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdc_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="vdc_id" foreignKey="fk_contactsubject_vdc_id" implied="false" onDeleteCascade="false" table="contactsubject"/>
+            <child column="vdc_id" foreignKey="fk_guestbookquestionnaire_vdc_id" implied="false" onDeleteCascade="false" table="guestbookquestionnaire"/>
+            <child column="vdc_id" foreignKey="fk_lockssconfig_vdc_id" implied="false" onDeleteCascade="false" table="lockssconfig"/>
+            <child column="vdc_id" foreignKey="fk_rolerequest_vdc_id" implied="false" onDeleteCascade="false" table="rolerequest"/>
+            <child column="vdc_id" foreignKey="fk_search_result_fields_vdc_id" implied="false" onDeleteCascade="false" table="search_result_fields"/>
+            <child column="owner_id" foreignKey="fk_study_owner_id" implied="false" onDeleteCascade="false" table="study"/>
+            <child column="vdc_id" foreignKey="fk_summary_fields_vdc_id" implied="false" onDeleteCascade="false" table="summary_fields"/>
+            <child column="vdc_id" foreignKey="fk_template_vdc_id" implied="false" onDeleteCascade="false" table="template"/>
+            <child column="vdc_id" foreignKey="fk_termsofuse_vdc_id" implied="false" onDeleteCascade="false" table="termsofuse"/>
+            <child column="vdc_id" foreignKey="fk_twittercredentials_vdc_id" implied="false" onDeleteCascade="false" table="twittercredentials"/>
+            <child column="vdc_id" foreignKey="fk_vdc_adv_search_fields_vdc_id" implied="false" onDeleteCascade="false" table="vdc_adv_search_fields"/>
+            <child column="vdc_id" foreignKey="fk_vdc_any_search_fields_vdc_id" implied="false" onDeleteCascade="false" table="vdc_any_search_fields"/>
+            <child column="vdc_id" foreignKey="fk_vdc_fileuser_vdc_id" implied="false" onDeleteCascade="false" table="vdc_fileuser"/>
+            <child column="vdc_id" foreignKey="fk_vdc_fileusergroup_vdc_id" implied="false" onDeleteCascade="false" table="vdc_fileusergroup"/>
+            <child column="vdc_id" foreignKey="fk_vdc_linked_collections_vdc_id" implied="false" onDeleteCascade="false" table="vdc_linked_collections"/>
+            <child column="vdcs_id" foreignKey="fk_vdc_usergroup_vdcs_id" implied="false" onDeleteCascade="false" table="vdc_usergroup"/>
+            <child column="vdc_id" foreignKey="fk_vdcactivity_vdc_id" implied="false" onDeleteCascade="false" table="vdcactivity"/>
+            <child column="owner_id" foreignKey="fk_vdccollection_owner_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+            <child column="vdc_id" foreignKey="fk_vdcgroup_vdcs_vdc_id" implied="false" onDeleteCascade="false" table="vdcgroup_vdcs"/>
+            <child column="vdc_id" foreignKey="fk_vdcrole_vdc_id" implied="false" onDeleteCascade="false" table="vdcrole"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="aboutthisdataverse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="affiliation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="alias" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="allowcontributorrequests" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="allowcontributorseditall" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="allowregistereduserstocontribute" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="7" name="allowstudycomments" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="8" name="announcements" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="9" name="contactemail" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="copyright" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="11" name="createddate" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="12" name="defaultsortorder" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="13" name="termsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="14" name="deposittermsofuseenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="15" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="16" name="displayannouncements" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="17" name="displayinframe" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="18" name="displaynetworkannouncements" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="19" name="displaynewstudies" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="20" name="downloadtermsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="21" name="downloadtermsofuseenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="22" name="dtype" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="23" name="dvndescription" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="24" name="filesrestricted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="25" name="firstname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="26" name="footer" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="27" name="header" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="28" name="lastname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="29" name="logo" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="30" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="31" name="parentsite" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="32" name="releasedate" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="33" name="restricted" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="34" name="termsofuseenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="35" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="36" name="visibility" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="37" name="creator_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_creator_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="38" name="defaulttemplate_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_defaulttemplate_id" implied="false" onDeleteCascade="false" table="template"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="39" name="reviewer_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_reviewer_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="40" name="vdcnetwork_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="41" name="harvestingdataverse_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_harvestingdataverse_id" implied="false" onDeleteCascade="false" table="harvestingdataverse"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="42" name="rootcollection_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_rootcollection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdc_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdc_adv_search_fields" numRows="133" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_adv_search_fields_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_adv_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="vdc_adv_search_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="vdc_any_search_fields" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_any_search_fields_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="study_field_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_any_search_fields_study_field_id" implied="false" onDeleteCascade="false" table="studyfield"/>
+         </column>
+         <primaryKey column="vdc_id" sequenceNumberInPK="1"/>
+         <primaryKey column="study_field_id" sequenceNumberInPK="2"/>
+         <index name="vdc_any_search_fields_pkey" unique="true">
+            <column ascending="true" name="vdc_id"/>
+            <column ascending="true" name="study_field_id"/>
+         </index>
+      </table>
+      <table name="vdc_fileuser" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_fileuser_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="allowedfileusers_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_fileuser_allowedfileusers_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="vdc_id" sequenceNumberInPK="1"/>
+         <primaryKey column="allowedfileusers_id" sequenceNumberInPK="2"/>
+         <index name="vdc_fileuser_pkey" unique="true">
+            <column ascending="true" name="vdc_id"/>
+            <column ascending="true" name="allowedfileusers_id"/>
+         </index>
+      </table>
+      <table name="vdc_fileusergroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="allowedfilegroups_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_fileusergroup_allowedfilegroups_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_fileusergroup_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="allowedfilegroups_id" sequenceNumberInPK="1"/>
+         <primaryKey column="vdc_id" sequenceNumberInPK="2"/>
+         <index name="vdc_fileusergroup_pkey" unique="true">
+            <column ascending="true" name="allowedfilegroups_id"/>
+            <column ascending="true" name="vdc_id"/>
+         </index>
+      </table>
+      <table name="vdc_linked_collections" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="linked_collection_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_linked_collections_linked_collection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_linked_collections_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="linked_collection_id" sequenceNumberInPK="1"/>
+         <primaryKey column="vdc_id" sequenceNumberInPK="2"/>
+         <index name="vdc_linked_collections_pkey" unique="true">
+            <column ascending="true" name="linked_collection_id"/>
+            <column ascending="true" name="vdc_id"/>
+         </index>
+      </table>
+      <table name="vdc_usergroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="allowedgroups_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_usergroup_allowedgroups_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="vdcs_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdc_usergroup_vdcs_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="allowedgroups_id" sequenceNumberInPK="1"/>
+         <primaryKey column="vdcs_id" sequenceNumberInPK="2"/>
+         <index name="vdc_usergroup_pkey" unique="true">
+            <column ascending="true" name="allowedgroups_id"/>
+            <column ascending="true" name="vdcs_id"/>
+         </index>
+      </table>
+      <table name="vdcactivity" numRows="7" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdcactivity_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="foreignstudylocaldownloadcount" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="localstudyforeigndownloadcount" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="localstudylocaldownloadcount" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="localstudynetworkdownloadcount" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="5" name="vdc_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcactivity_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdcactivity_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="vdcactivity_vdc_id_key" unique="true">
+            <column ascending="true" name="vdc_id"/>
+         </index>
+      </table>
+      <table name="vdccollection" numRows="9" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdccollection_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="vdc_collection_id" foreignKey="fk_coll_adv_search_fields_vdc_collection_id" implied="false" onDeleteCascade="false" table="coll_adv_search_fields"/>
+            <child column="vdc_collection_id" foreignKey="fk_coll_any_search_fields_vdc_collection_id" implied="false" onDeleteCascade="false" table="coll_any_search_fields"/>
+            <child column="vdc_collection_id" foreignKey="fk_coll_search_result_fields_vdc_collection_id" implied="false" onDeleteCascade="false" table="coll_search_result_fields"/>
+            <child column="vdc_collection_id" foreignKey="fk_coll_studies_vdc_collection_id" implied="false" onDeleteCascade="false" table="coll_studies"/>
+            <child column="rootcollection_id" foreignKey="fk_vdc_rootcollection_id" implied="false" onDeleteCascade="false" table="vdc"/>
+            <child column="linked_collection_id" foreignKey="fk_vdc_linked_collections_linked_collection_id" implied="false" onDeleteCascade="false" table="vdc_linked_collections"/>
+            <child column="parentcollection_id" foreignKey="fk_vdccollection_parentcollection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="description" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="query" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="scope" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="6" name="type" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="8" name="owner_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdccollection_owner_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="9" name="parentcollection_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdccollection_parentcollection_id" implied="false" onDeleteCascade="false" table="vdccollection"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdccollection_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdcgroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdcgroup_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="vdcgroup_id" foreignKey="fk_vdcgroup_vdcs_vdcgroup_id" implied="false" onDeleteCascade="false" table="vdcgroup_vdcs"/>
+            <child column="group_id" foreignKey="fk_vdcgrouprelationship_group_id" implied="false" onDeleteCascade="false" table="vdcgrouprelationship"/>
+            <child column="subgroup_id" foreignKey="fk_vdcgrouprelationship_subgroup_id" implied="false" onDeleteCascade="false" table="vdcgrouprelationship"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="defaultdisplaynumber" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="2" name="description" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="displayorder" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="parent" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="6" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdcgroup_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdcgroup_vdcs" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcgroup_vdcs_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="vdcgroup_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcgroup_vdcs_vdcgroup_id" implied="false" onDeleteCascade="false" table="vdcgroup"/>
+         </column>
+         <primaryKey column="vdc_id" sequenceNumberInPK="1"/>
+         <primaryKey column="vdcgroup_id" sequenceNumberInPK="2"/>
+         <index name="vdcgroup_vdcs_pkey" unique="true">
+            <column ascending="true" name="vdc_id"/>
+            <column ascending="true" name="vdcgroup_id"/>
+         </index>
+      </table>
+      <table name="vdcgrouprelationship" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="group_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcgrouprelationship_group_id" implied="false" onDeleteCascade="false" table="vdcgroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="subgroup_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcgrouprelationship_subgroup_id" implied="false" onDeleteCascade="false" table="vdcgroup"/>
+         </column>
+         <primaryKey column="group_id" sequenceNumberInPK="1"/>
+         <primaryKey column="subgroup_id" sequenceNumberInPK="2"/>
+         <index name="vdcgrouprelationship_pkey" unique="true">
+            <column ascending="true" name="group_id"/>
+            <column ascending="true" name="subgroup_id"/>
+         </index>
+      </table>
+      <table name="vdcnetwork" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdcnetwork_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="vdcnetwork_id" foreignKey="fk_linked_network_studies_vdcnetwork_id" implied="false" onDeleteCascade="false" table="linked_network_studies"/>
+            <child column="vdcnetwork_id" foreignKey="fk_networkcontactsubject_vdcnetwork_id" implied="false" onDeleteCascade="false" table="networkcontactsubject"/>
+            <child column="vdcnetwork_id" foreignKey="fk_template_vdcnetwork_id" implied="false" onDeleteCascade="false" table="template"/>
+            <child column="vdcnetwork_id" foreignKey="fk_vdc_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdc"/>
+            <child column="vdcnetwork_id" foreignKey="fk_vdcnetworkstats_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdcnetworkstats"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="aboutthisdataversenetwork" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="2" name="affiliation" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="allowcreaterequest" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="announcements" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="5" name="authority" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="contactemail" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="defaultdvsortcolumn" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="defaultdisplaynumber" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="9" name="defaultvdcabouttext" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="10" name="defaultvdcannouncements" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="11" name="defaultvdcfooter" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="12" name="defaultvdcheader" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="13" name="deposittermsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="14" name="deposittermsofuseenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="15" name="displayannouncements" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="16" name="displayvdcannouncements" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="17" name="displayvdcrecentstudies" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="18" name="downloadtermsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="19" name="downloadtermsofuseenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="20" name="exportdayofweek" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="21" name="exporthourofday" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="22" name="exportperiod" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="23" name="handleregistration" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="24" name="logo" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="25" name="name" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="6" id="26" name="networkcreated" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="27" name="networkpagefooter" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="28" name="networkpageheader" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="29" name="protocol" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="30" name="requiredvaffiliation" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="31" name="requiredvclassification" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="32" name="requiredvdescription" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="33" name="requiredvstudiesforrelease" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="34" name="restrictiontext" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="35" name="shortdescription" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="36" name="statusnotice" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="37" name="systememail" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="38" name="termsofuse" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="39" name="termsofuseenabled" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="6" id="40" name="termsofuseupdated" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="41" name="urlalias" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="42" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="43" name="defaulttemplate_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcnetwork_defaulttemplate_id" implied="false" onDeleteCascade="false" table="template"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="44" name="creator_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcnetwork_creator_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="45" name="defaultnetworkadmin_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcnetwork_defaultnetworkadmin_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdcnetwork_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdcnetworkstats" numRows="2" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdcnetworkstats_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="downloadcount" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="2" name="filecount" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="studycount" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="4" name="vdcnetwork_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcnetworkstats_vdcnetwork_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdcnetworkstats_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdcrole" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdcrole_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="role_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcrole_role_id" implied="false" onDeleteCascade="false" table="role"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="vdc_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcrole_vdc_id" implied="false" onDeleteCascade="false" table="vdc"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="vdcuser_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcrole_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdcrole_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdcuser" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('vdcuser_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="user_id" foreignKey="fk_flagged_study_comments_user_id" implied="false" onDeleteCascade="false" table="flagged_study_comments"/>
+            <child column="vdcuser_id" foreignKey="fk_guestbookresponse_vdcuser_id" implied="false" onDeleteCascade="false" table="guestbookresponse"/>
+            <child column="vdcuser_id" foreignKey="fk_networkrolerequest_vdcuser_id" implied="false" onDeleteCascade="false" table="networkrolerequest"/>
+            <child column="vdcuser_id" foreignKey="fk_rolerequest_vdcuser_id" implied="false" onDeleteCascade="false" table="rolerequest"/>
+            <child column="creator_id" foreignKey="fk_study_creator_id" implied="false" onDeleteCascade="false" table="study"/>
+            <child column="lastupdater_id" foreignKey="fk_study_lastupdater_id" implied="false" onDeleteCascade="false" table="study"/>
+            <child column="reviewer_id" foreignKey="fk_study_reviewer_id" implied="false" onDeleteCascade="false" table="study"/>
+            <child column="allowedusers_id" foreignKey="fk_study_vdcuser_allowedusers_id" implied="false" onDeleteCascade="false" table="study_vdcuser"/>
+            <child column="vdcuser_id" foreignKey="fk_studyaccessrequest_vdcuser_id" implied="false" onDeleteCascade="false" table="studyaccessrequest"/>
+            <child column="commentcreator_id" foreignKey="fk_studycomment_commentcreator_id" implied="false" onDeleteCascade="false" table="studycomment"/>
+            <child column="allowedusers_id" foreignKey="fk_studyfile_vdcuser_allowedusers_id" implied="false" onDeleteCascade="false" table="studyfile_vdcuser"/>
+            <child column="user_id" foreignKey="fk_studylock_user_id" implied="false" onDeleteCascade="false" table="studylock"/>
+            <child column="vdcuser_id" foreignKey="fk_studyrequest_vdcuser_id" implied="false" onDeleteCascade="false" table="studyrequest"/>
+            <child column="creator_id" foreignKey="fk_vdc_creator_id" implied="false" onDeleteCascade="false" table="vdc"/>
+            <child column="reviewer_id" foreignKey="fk_vdc_reviewer_id" implied="false" onDeleteCascade="false" table="vdc"/>
+            <child column="allowedfileusers_id" foreignKey="fk_vdc_fileuser_allowedfileusers_id" implied="false" onDeleteCascade="false" table="vdc_fileuser"/>
+            <child column="creator_id" foreignKey="fk_vdcnetwork_creator_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+            <child column="defaultnetworkadmin_id" foreignKey="fk_vdcnetwork_defaultnetworkadmin_id" implied="false" onDeleteCascade="false" table="vdcnetwork"/>
+            <child column="vdcuser_id" foreignKey="fk_vdcrole_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcrole"/>
+            <child column="vdcuser_id" foreignKey="fk_vdcuser_studycomment_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser_studycomment"/>
+            <child column="users_id" foreignKey="fk_vdcuser_usergroup_users_id" implied="false" onDeleteCascade="false" table="vdcuser_usergroup"/>
+            <child column="contributor_id" foreignKey="fk_versioncontributor_contributor_id" implied="false" onDeleteCascade="false" table="versioncontributor"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="agreedtermsofuse" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="3" name="bypasstermsofuse" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="email" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="encryptedpassword" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="6" name="firstname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="institution" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="lastname" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="9" name="phonenumber" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="position" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="11" name="test" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="12" name="username" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="13" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="14" name="networkrole_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcuser_networkrole_id" implied="false" onDeleteCascade="false" table="networkrole"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vdcuser_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vdcuser_studycomment" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="vdcuser_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcuser_studycomment_vdcuser_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="flaggedstudycomments_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcuser_studycomment_flaggedstudycomments_id" implied="false" onDeleteCascade="false" table="studycomment"/>
+         </column>
+         <primaryKey column="vdcuser_id" sequenceNumberInPK="1"/>
+         <primaryKey column="flaggedstudycomments_id" sequenceNumberInPK="2"/>
+         <index name="vdcuser_studycomment_pkey" unique="true">
+            <column ascending="true" name="vdcuser_id"/>
+            <column ascending="true" name="flaggedstudycomments_id"/>
+         </index>
+      </table>
+      <table name="vdcuser_usergroup" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="usergroups_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcuser_usergroup_usergroups_id" implied="false" onDeleteCascade="false" table="usergroup"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="users_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_vdcuser_usergroup_users_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <primaryKey column="usergroups_id" sequenceNumberInPK="1"/>
+         <primaryKey column="users_id" sequenceNumberInPK="2"/>
+         <index name="vdcuser_usergroup_pkey" unique="true">
+            <column ascending="true" name="usergroups_id"/>
+            <column ascending="true" name="users_id"/>
+         </index>
+      </table>
+      <table name="versioncontributor" numRows="5" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('versioncontributor_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="6" id="1" name="lastupdatetime" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="2" name="version" nullable="true" remarks="" size="19" type="int8"/>
+         <column autoUpdated="false" digits="0" id="3" name="contributor_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_versioncontributor_contributor_id" implied="false" onDeleteCascade="false" table="vdcuser"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="studyversion_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_versioncontributor_studyversion_id" implied="false" onDeleteCascade="false" table="studyversion"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="versioncontributor_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="visualizationdisplay" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('visualizationdisplay_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="defaultdisplay" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="measuretypelabel" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="showdatatable" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="4" name="showflashgraph" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="5" name="showimagegraph" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="sourceinfolabel" nullable="true" remarks="" size="255" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="datatable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_visualizationdisplay_datatable_id" implied="false" onDeleteCascade="false" table="datatable"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="visualizationdisplay_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="weightedvarrelationship" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="variable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_weightedvarrelationship_variable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="weighted_variable_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_weightedvarrelationship_weighted_variable_id" implied="false" onDeleteCascade="false" table="datavariable"/>
+         </column>
+         <primaryKey column="variable_id" sequenceNumberInPK="1"/>
+         <primaryKey column="weighted_variable_id" sequenceNumberInPK="2"/>
+         <index name="weightedvarrelationship_pkey" unique="true">
+            <column ascending="true" name="variable_id"/>
+            <column ascending="true" name="weighted_variable_id"/>
+         </index>
+         <index name="weightedvarrelationship_id_index" unique="false">
+            <column ascending="true" name="weighted_variable_id"/>
+            <column ascending="true" name="variable_id"/>
+         </index>
+      </table>
+   </tables>
+</database>
