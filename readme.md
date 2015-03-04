@@ -1,6 +1,6 @@
 ![alt text](http://www.toolkit.ualberta.ca/Toolkit%20Downloads/~/media/identity/Toolkit/Logos/UA/UA-COLOUR-180px.png "University of Alberta")
 
-# Dataverse Network (DVN)
+# Dataverse Network (DVN) [![Build Status](https://travis-ci.org/ualbertalib/dvn.svg?branch=develop)](https://travis-ci.org/ualbertalib/dvn)
 
 * UAL Dataverse Network <https://dataverse.library.ualberta.ca/>
 * The Dataverse Network Project is an open source web application for sharing, citing, analyzing, and preserving research data.
